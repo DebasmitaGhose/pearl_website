@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Soft abstract lab workspace">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef4f8"/>
+      <stop offset="50%" stop-color="#e8eef5"/>
+      <stop offset="100%" stop-color="#dfe8f2"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8fb4d4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#5a7fa8" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1180" cy="320" r="220" fill="url(#orb)"/>
+  <circle cx="420" cy="680" r="180" fill="#c9d9ea" opacity="0.5"/>
+  <rect x="280" y="360" width="520" height="320" rx="48" fill="#ffffff" opacity="0.65"/>
+  <rect x="340" y="420" width="180" height="24" rx="12" fill="#b8c9dc" opacity="0.7"/>
+  <rect x="340" y="470" width="360" height="16" rx="8" fill="#d4dde8" opacity="0.8"/>
+  <rect x="340" y="510" width="300" height="16" rx="8" fill="#d4dde8" opacity="0.6"/>
+  <circle cx="980" cy="520" r="72" fill="#5a7fa8" opacity="0.25"/>
+  <circle cx="980" cy="520" r="36" fill="#5a7fa8" opacity="0.4"/>
+</svg>

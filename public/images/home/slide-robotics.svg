@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Soft abstract robotics research">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f3ece6"/>
+      <stop offset="55%" stop-color="#eef2f6"/>
+      <stop offset="100%" stop-color="#e4edf5"/>
+    </linearGradient>
+    <linearGradient id="arm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8fb4d4"/>
+      <stop offset="100%" stop-color="#6b8cae"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <ellipse cx="800" cy="860" rx="620" ry="90" fill="#d8e2ec" opacity="0.55"/>
+  <rect x="520" y="520" width="440" height="120" rx="60" fill="#ffffff" opacity="0.7"/>
+  <rect x="760" y="280" width="80" height="260" rx="40" fill="url(#arm)" opacity="0.55"/>
+  <rect x="640" y="360" width="200" height="64" rx="32" fill="url(#arm)" opacity="0.45"/>
+  <circle cx="640" cy="392" r="44" fill="#5a7fa8" opacity="0.35"/>
+  <circle cx="1080" cy="300" r="140" fill="#c9d9ea" opacity="0.45"/>
+  <circle cx="300" cy="260" r="100" fill="#e8d8c8" opacity="0.5"/>
+</svg>

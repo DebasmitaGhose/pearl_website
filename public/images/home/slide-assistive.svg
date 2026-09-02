@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Soft abstract socially assistive robotics">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5f8fb"/>
+      <stop offset="100%" stop-color="#ebe6df"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#8fb4d4" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8fb4d4" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <ellipse cx="800" cy="420" rx="360" ry="280" fill="url(#glow)"/>
+  <circle cx="620" cy="480" r="96" fill="#ffffff" opacity="0.75"/>
+  <circle cx="820" cy="480" r="96" fill="#ffffff" opacity="0.75"/>
+  <circle cx="1020" cy="480" r="96" fill="#ffffff" opacity="0.75"/>
+  <rect x="560" y="600" width="480" height="28" rx="14" fill="#d4dde8" opacity="0.75"/>
+  <rect x="620" y="650" width="360" height="20" rx="10" fill="#e2e8f0" opacity="0.7"/>
+  <circle cx="800" cy="320" r="56" fill="#5a7fa8" opacity="0.28"/>
+</svg>
