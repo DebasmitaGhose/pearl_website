@@ -1,0 +1,13 @@
+title: "Pedestrian Detection In Thermal Images Using Saliency Maps"
+authors: "Debasmita Ghose*, Shasvat Desai*, Sneha Bhattacharya*, Deep Chakraborty*, Madalina Fiterau, Tauhidur Rahman"
+venue: "CVPR 2019"
+journal: "CVPR 2019 Workshop on Perception Beyond the Visible Spectrum (Oral - Spotlight)"
+year: 2019
+sortOrder: 1
+links:
+  - label: paper
+    url: https://openaccess.thecvf.com/content_CVPRW_2019/papers/PBVS/Ghose_Pedestrian_Detection_in_Thermal_Images_Using_Saliency_Maps_CVPRW_2019_paper.pdf
+  - label: project
+    url: https://information-fusion-lab-umass.github.io/Salient-Pedestrian-Detection/
+  - label: code
+    url: https://github.com/Information-Fusion-Lab-Umass/Multimodal_Influenza_Detection/tree/fppi_LAMR/faster-rcnn.pytorch

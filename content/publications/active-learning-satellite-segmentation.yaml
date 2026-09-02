@@ -1,0 +1,11 @@
+title: "Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images"
+authors: "Shasvat Desai*, Debasmita Ghose*"
+venue: "WACV 2022"
+journal: "IEEE/CVF WACV 2022, Waikoloa, HI (Oral)"
+year: 2022
+sortOrder: 3
+links:
+  - label: paper
+    url: https://arxiv.org/abs/2110.07782
+  - label: project
+    url: https://sites.google.com/view/al-s4gan-semi-sup-sseg/home

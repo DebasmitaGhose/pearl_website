@@ -1,0 +1,11 @@
+title: "Integrating Multimodal Affective Signals for Stress Detection from Audio-Visual Data"
+authors: "Debasmita Ghose*, Oz Gitelson*, Brian Scassellati"
+venue: "ICMI 2024"
+journal: "ACM International Conference on Multimodal Interaction (ICMI 2024), San Jose, Costa Rica"
+year: 2024
+sortOrder: 8
+links:
+  - label: paper
+    url: https://scazlab.yale.edu/sites/default/files/files/ICMI_2024___Stress_Detection%20(13).pdf
+  - label: project
+    url: https://sites.google.com/view/stress-detection-icmi-24/home

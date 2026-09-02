@@ -1,0 +1,7 @@
+carouselImages:
+  - image: /images/home/slide-collaboration.svg
+    caption: Designing robots that collaborate with people in shared tasks
+  - image: /images/home/slide-robotics.svg
+    caption: Research at the intersection of HRI, learning, and deployment
+  - image: /images/home/slide-assistive.svg
+    caption: Socially assistive systems for everyday wellbeing
