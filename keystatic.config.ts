@@ -151,18 +151,39 @@ export default config({
     }),
     research: singleton({
       label: "Research page",
-      path: "content/research",
-      format: { contentField: "content" },
+      path: "content/research-page",
+      format: "yaml",
       schema: {
-        heroImage: fields.image({
-          label: "Hero image (optional)",
-          directory: researchImageOptions.directory,
-          publicPath: researchImageOptions.publicPath,
+        theme: fields.text({
+          label: "Overarching theme",
+          multiline: true,
         }),
-        content: fields.markdoc({
-          label: "Research page (Markdown)",
-          options: { image: researchImageOptions },
-        }),
+        areas: fields.array(
+          fields.object({
+            title: fields.text({ label: "Area title" }),
+            slug: fields.text({ label: "Slug (stable id)" }),
+            description: fields.text({
+              label: "Short description",
+              multiline: true,
+            }),
+            image: fields.image({
+              label: "Area image",
+              directory: researchImageOptions.directory,
+              publicPath: researchImageOptions.publicPath,
+            }),
+            publicationTitles: fields.array(
+              fields.text({ label: "Publication title" }),
+              {
+                label: "Related publications (exact titles from Publications)",
+                itemLabel: (props) => props.value || "Publication",
+              }
+            ),
+          }),
+          {
+            label: "Research areas",
+            itemLabel: (props) => props.fields.title.value || "Area",
+          }
+        ),
       },
     }),
     join: singleton({
@@ -245,6 +266,10 @@ export default config({
           label: "Cover image",
           directory: "public/images/news",
           publicPath: "/images/news",
+        }),
+        published: fields.checkbox({
+          label: "Published",
+          defaultValue: true,
         }),
         body: fields.markdoc({
           label: "Body (Markdown)",

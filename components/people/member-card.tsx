@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { joinHrefForMemberRole } from "@/lib/join-opportunities";
 import { roleLabels, memberRoleOrder } from "@/lib/site.config";
 
 export type MemberEntry = {
@@ -58,7 +59,10 @@ function MemberCard({ member }: { member: MemberEntry }) {
       </h3>
       <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
         {isPlaceholder ? (
-          <Link href="/join" className="text-foreground hover:underline">
+          <Link
+            href={joinHrefForMemberRole(member.role)}
+            className="text-foreground hover:underline"
+          >
             Join us
           </Link>
         ) : (
@@ -86,6 +90,22 @@ function MemberCard({ member }: { member: MemberEntry }) {
           </>
         )}
       </div>
+    </article>
+  );
+}
+
+function RobotCard() {
+  return (
+    <article className="flex flex-col items-center text-center">
+      <div
+        className="flex size-[88px] items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground"
+        aria-hidden
+      >
+        TBD
+      </div>
+      <h3 className="mt-3 text-sm font-medium leading-snug text-foreground">
+        TBD
+      </h3>
     </article>
   );
 }
@@ -119,6 +139,14 @@ export function PeopleSections({ members }: { members: MemberEntry[] }) {
           </div>
         </section>
       ))}
+
+      <section>
+        <h2 className="mb-5 text-sm font-semibold text-primary">Robots</h2>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
+          <RobotCard />
+          <RobotCard />
+        </div>
+      </section>
     </div>
   );
 }

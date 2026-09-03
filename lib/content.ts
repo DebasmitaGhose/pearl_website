@@ -38,7 +38,37 @@ export async function getAboutContent() {
 }
 
 export async function getResearchContent() {
-  return reader.singletons.research.read();
+  const research = await reader.singletons.research.read();
+  const publications = await getPublications();
+  const byTitle = new Map(
+    publications.map((pub) => [pub.title.trim().toLowerCase(), pub]),
+  );
+
+  const areas =
+    research?.areas?.map((area) => {
+      const matched = (area.publicationTitles ?? [])
+        .map((title) => byTitle.get(title.trim().toLowerCase()))
+        .filter((pub): pub is (typeof publications)[number] => Boolean(pub));
+
+      return {
+        title: area.title ?? "",
+        slug: area.slug ?? "",
+        description: area.description ?? "",
+        image: area.image ?? null,
+        publications: matched.map((pub) => ({
+          slug: pub.slug,
+          title: pub.title,
+          venue: pub.venue,
+          year: pub.year,
+          href: pub.links[0]?.url ?? `/publications#${pub.slug}`,
+        })),
+      };
+    }) ?? [];
+
+  return {
+    theme: research?.theme ?? "",
+    areas,
+  };
 }
 
 export async function getJoinContent() {
@@ -87,11 +117,13 @@ export async function getPublications() {
 
 export async function getNewsEntries(limit?: number) {
   const news = await reader.collections.news.all();
-  const sorted = news.sort((a, b) => {
-    const dateA = a.entry.date ?? "";
-    const dateB = b.entry.date ?? "";
-    return dateB.localeCompare(dateA);
-  });
+  const sorted = news
+    .filter((item) => item.entry.published !== false)
+    .sort((a, b) => {
+      const dateA = a.entry.date ?? "";
+      const dateB = b.entry.date ?? "";
+      return dateB.localeCompare(dateA);
+    });
   const visible = limit ? sorted.slice(0, limit) : sorted;
 
   return Promise.all(
@@ -113,6 +145,7 @@ export async function getNewsEntries(limit?: number) {
 export async function getNewsItems() {
   const news = await reader.collections.news.all();
   return news
+    .filter((item) => item.entry.published !== false)
     .sort((a, b) => {
       const dateA = a.entry.date ?? "";
       const dateB = b.entry.date ?? "";

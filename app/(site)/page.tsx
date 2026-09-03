@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HomeCarousel } from "@/components/home/home-carousel";
 import { NewsTimeline } from "@/components/news/news-timeline";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -18,6 +19,22 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      <section className="mt-6 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-6 py-6 sm:px-8 sm:py-7">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/70">
+          Now recruiting
+        </p>
+        <p className="mt-2 font-display text-lg font-semibold leading-snug text-primary sm:text-xl">
+          PhD students, master&apos;s students, and undergraduates are welcome
+          to join PEARL.
+        </p>
+        <Link
+          href="/join"
+          className="mt-4 inline-flex items-center text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:decoration-primary"
+        >
+          Join the lab
+        </Link>
+      </section>
+
       <section className="py-8 sm:py-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-start lg:gap-10">
           <div className="space-y-3 order-2 lg:order-1">

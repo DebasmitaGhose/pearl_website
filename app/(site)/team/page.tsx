@@ -6,11 +6,7 @@ export default async function TeamPage() {
   const members = await getActiveMembers();
 
   return (
-    <PageFrame
-      title="Team"
-      description="Led by Dr. Debasmita Ghose. We are growing across PhD, master's, and undergraduate researchers."
-      wide
-    >
+    <PageFrame title="Team" wide>
       <PeopleSections members={members} />
     </PageFrame>
   );

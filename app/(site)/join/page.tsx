@@ -1,24 +1,33 @@
-import { MarkdownPage } from "@/components/content/markdown-page";
+import Image from "next/image";
+import { JoinOpportunityCards } from "@/components/join/join-opportunity-cards";
+import { PageFrame } from "@/components/layout/page-frame";
 import { getJoinContent, getSiteSettings } from "@/lib/content";
 
 export default async function JoinPage() {
   const site = await getSiteSettings();
   const join = await getJoinContent();
 
-  if (!join) {
-    return (
-      <div className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground sm:px-6">
-        Join page content has not been added yet.
-      </div>
-    );
-  }
-
   return (
-    <MarkdownPage
+    <PageFrame
       title="Join the lab"
-      heroImage={join.heroImage}
-      content={() => join.content()}
-      footer={
+      description="PEARL welcomes motivated researchers who want to build robots that genuinely align with people. Open a card below for how to apply."
+    >
+      {join?.heroImage && (
+        <div className="relative mb-8 aspect-[16/10] border border-border bg-muted">
+          <Image
+            src={join.heroImage}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 896px"
+            priority
+          />
+        </div>
+      )}
+
+      <JoinOpportunityCards />
+
+      <div className="mt-10 border-t border-border pt-6">
         <p className="text-sm text-muted-foreground">
           Questions?{" "}
           <a
@@ -28,7 +37,7 @@ export default async function JoinPage() {
             {site.contactEmail}
           </a>
         </p>
-      }
-    />
+      </div>
+    </PageFrame>
   );
 }
