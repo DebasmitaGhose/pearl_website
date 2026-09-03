@@ -22,3 +22,8 @@ export const aboutImageOptions = {
   directory: "public/images/pages/about",
   publicPath: "/images/pages/about",
 };
+
+export const advisingImageOptions = {
+  directory: "public/images/pages/advising",
+  publicPath: "/images/pages/advising",
+};

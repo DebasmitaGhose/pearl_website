@@ -99,14 +99,14 @@ export const joinOpportunities: JoinOpportunity[] = [
             " and mention my name (Debasmita Ghose) in your application. In your statement, please discuss your specific research interests—keeping in mind that these are a starting point rather than a commitment to a particular project—and describe why you want to pursue a Ph.D.",
           ],
           [
-            "After submitting your application to UIC, please also ",
+            "After submitting your application to UIC, please also fill out ",
             {
               type: "link",
               href: PHD_GOOGLE_FORM_URL,
-              label: "fill out this Google Form",
+              label: "this actively monitored Google Form",
               bold: true,
             },
-            ". We actively monitor this form and will reach out if we see a potential fit. This will help me learn more about you and your application; I may follow up by email or Zoom to learn more or schedule an interview.",
+            ". This will help me learn more about you and your application. I may follow up by email to learn more or schedule an interview.",
           ],
           [
             "Due to the volume of email I receive, I may not be able to respond to individual inquiries about prospective Ph.D. positions or assess fit over email. ",

@@ -1,6 +1,7 @@
 type PageFrameProps = {
   title: string;
   description?: string;
+  afterDescription?: React.ReactNode;
   children: React.ReactNode;
   wide?: boolean;
 };
@@ -8,6 +9,7 @@ type PageFrameProps = {
 export function PageFrame({
   title,
   description,
+  afterDescription,
   children,
   wide = false,
 }: PageFrameProps) {
@@ -24,6 +26,7 @@ export function PageFrame({
             {description}
           </p>
         )}
+        {afterDescription}
       </header>
       {children}
     </div>

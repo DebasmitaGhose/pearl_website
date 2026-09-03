@@ -20,19 +20,17 @@ export default async function HomePage() {
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6">
       <section className="mt-6 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-6 py-6 sm:px-8 sm:py-7">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/70">
-          Now recruiting
+        <p className="font-display text-lg font-semibold leading-snug text-primary sm:text-xl">
+          We are hiring Ph.D., master&apos;s, and undergraduate students to join
+          the lab.{" "}
+          <Link
+            href="/join"
+            className="underline decoration-primary/35 underline-offset-4 transition-colors hover:decoration-primary"
+          >
+            Learn more and apply
+          </Link>
+          .
         </p>
-        <p className="mt-2 font-display text-lg font-semibold leading-snug text-primary sm:text-xl">
-          Ph.D. students, master&apos;s students, and undergraduates are welcome
-          to join PEARL.
-        </p>
-        <Link
-          href="/join"
-          className="mt-4 inline-flex items-center text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:decoration-primary"
-        >
-          Join the lab
-        </Link>
       </section>
 
       <section className="py-8 sm:py-10">

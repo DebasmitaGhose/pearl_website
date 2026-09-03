@@ -1,6 +1,7 @@
 import { config, collection, fields, singleton } from "@keystatic/core";
 import {
   aboutImageOptions,
+  advisingImageOptions,
   homeImageOptions,
   joinImageOptions,
   researchImageOptions,
@@ -146,6 +147,22 @@ export default config({
         content: fields.markdoc({
           label: "About the lab (Markdown)",
           options: { image: aboutImageOptions },
+        }),
+      },
+    }),
+    advising: singleton({
+      label: "Advising statement",
+      path: "content/advising",
+      format: { contentField: "content" },
+      schema: {
+        heroImage: fields.image({
+          label: "Hero image (optional)",
+          directory: advisingImageOptions.directory,
+          publicPath: advisingImageOptions.publicPath,
+        }),
+        content: fields.markdoc({
+          label: "Advising statement (Markdown)",
+          options: { image: advisingImageOptions },
         }),
       },
     }),

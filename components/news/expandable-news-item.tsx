@@ -3,14 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import type { NewsEntryData } from "@/components/news/news-types";
-
-function formatDateTag(date: string | null | undefined) {
-  if (!date) return "";
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-  });
-}
+import { formatNewsMonthYear } from "@/lib/dates";
 
 export function ExpandableNewsItem({
   item,
@@ -52,7 +45,7 @@ export function ExpandableNewsItem({
       >
         {item.date && (
           <span className="mr-2 inline-block border border-border px-1.5 py-0.5 text-xs font-medium text-muted-foreground">
-            {formatDateTag(item.date)}
+            {formatNewsMonthYear(item.date)}
           </span>
         )}
         <span className="font-medium hover:underline">{item.title}</span>

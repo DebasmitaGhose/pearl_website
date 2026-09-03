@@ -9,7 +9,7 @@ export const navigation: NavItem[] = [
   { label: "Research", href: "/research" },
   { label: "Team", href: "/team" },
   { label: "Publications", href: "/publications" },
-  { label: "News", href: "/news" },
+  { label: "News", href: "/news", hidden: true },
   { label: "Join the Lab", href: "/join" },
 ];
 

@@ -37,6 +37,10 @@ export async function getAboutContent() {
   return reader.singletons.about.read();
 }
 
+export async function getAdvisingContent() {
+  return reader.singletons.advising.read();
+}
+
 export async function getResearchContent() {
   const research = await reader.singletons.research.read();
   const publications = await getPublications();

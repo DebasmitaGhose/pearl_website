@@ -1,13 +1,6 @@
 import Image from "next/image";
 import type { NewsEntryData } from "@/components/news/news-types";
-
-function formatDateTag(date: string | null | undefined) {
-  if (!date) return "";
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-  });
-}
+import { formatNewsMonthYear } from "@/lib/dates";
 
 export function NewsItem({
   item,
@@ -19,12 +12,10 @@ export function NewsItem({
   return (
     <li className="py-2">
       <details id={item.slug} className="group">
-        <summary
-          className="cursor-pointer list-none text-sm leading-relaxed [&::-webkit-details-marker]:hidden"
-        >
+        <summary className="cursor-pointer list-none text-sm leading-relaxed [&::-webkit-details-marker]:hidden">
           {item.date && (
             <span className="mr-2 inline-block rounded-md border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-xs font-medium text-primary">
-              {formatDateTag(item.date)}
+              {formatNewsMonthYear(item.date)}
             </span>
           )}
           <span className="font-medium text-foreground hover:text-primary hover:underline">

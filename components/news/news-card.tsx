@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatNewsFullDate } from "@/lib/dates";
 
 export type NewsEntry = {
   slug: string;
@@ -9,15 +10,6 @@ export type NewsEntry = {
   summary: string;
   image?: string | null;
 };
-
-function formatDate(date: string | null) {
-  if (!date) return "";
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 export function NewsCard({ item }: { item: NewsEntry }) {
   return (
@@ -36,7 +28,7 @@ export function NewsCard({ item }: { item: NewsEntry }) {
         )}
         <CardHeader className="pb-2">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            {formatDate(item.date)}
+            {formatNewsFullDate(item.date)}
           </p>
           <CardTitle className="text-lg leading-snug">{item.title}</CardTitle>
         </CardHeader>
