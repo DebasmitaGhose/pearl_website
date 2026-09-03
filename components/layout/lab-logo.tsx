@@ -18,11 +18,14 @@ export function LabLogo({ subtitle, institution, className }: LabLogoProps) {
         alt="PEARL logo"
         width={52}
         height={52}
-        className="shrink-0 text-foreground"
+        className="shrink-0 text-primary"
         priority
       />
       <div className="min-w-0">
-        <p className="text-lg font-semibold leading-tight text-foreground group-hover:underline">
+        <p
+          className="text-lg font-semibold leading-tight text-primary group-hover:text-pearl-blue"
+          suppressHydrationWarning
+        >
           PEARL
         </p>
         {subtitle && (

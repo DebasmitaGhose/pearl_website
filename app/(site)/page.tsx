@@ -21,7 +21,7 @@ export default async function HomePage() {
       <section className="py-8 sm:py-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-start lg:gap-10">
           <div className="space-y-3 order-2 lg:order-1">
-            <h1 className="font-display text-2xl font-semibold leading-tight sm:text-3xl">
+            <h1 className="font-display text-2xl font-semibold leading-tight text-primary sm:text-3xl">
               {site.labSubtitle}
             </h1>
             <p className="text-muted-foreground">{site.tagline}</p>
@@ -30,8 +30,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-8 border-t border-border">
-        <h2 className="font-display text-xl font-semibold">About the lab</h2>
+      <section className="border-t border-primary/10 py-8">
+        <h2 className="font-display text-xl font-semibold text-primary">About the lab</h2>
         <div className="mt-4 max-w-3xl">
           {aboutContent ? (
             <div className="prose prose-neutral max-w-none">
@@ -43,9 +43,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-8 border-t border-border">
+      <section className="border-t border-primary/10 py-8">
         <div className="mb-3 flex flex-wrap items-baseline justify-between gap-3">
-          <h2 className="font-display text-xl font-semibold">Latest news</h2>
+          <h2 className="font-display text-xl font-semibold text-primary">Latest news</h2>
           <ButtonLink href="/news" variant="ghost" size="sm">
             All news
           </ButtonLink>

@@ -1,5 +1,8 @@
 import { reader } from "@/lib/keystatic";
-import { buildPublicationLinks } from "@/lib/publications";
+import {
+  buildPublicationLinks,
+  publicationSlug,
+} from "@/lib/publications";
 import { renderMarkdoc } from "@/lib/markdoc";
 import { defaultSiteSettings } from "@/lib/site.config";
 
@@ -60,16 +63,21 @@ export async function getActiveMembers() {
 }
 
 export async function getPublications() {
-  const publications = await reader.collections.publications.all();
+  const data = await reader.singletons.publications.read();
+  const publications = data?.publications ?? [];
+
   return publications
-    .map((pub) => ({
-      slug: pub.slug,
-      title: pub.entry.title,
-      authors: pub.entry.authors,
-      venue: pub.entry.venue ?? pub.entry.journal ?? "",
-      year: pub.entry.year ?? 0,
-      sortOrder: pub.entry.sortOrder ?? 0,
-      links: buildPublicationLinks(pub.entry),
+    .map((pub, index) => ({
+      slug: publicationSlug(pub.title ?? "", index),
+      title: pub.title ?? "",
+      authors: pub.authors ?? "",
+      venue: pub.venue ?? "",
+      journal: pub.journal ?? "",
+      year: pub.year ?? 0,
+      sortOrder: pub.sortOrder ?? 0,
+      abstract: pub.abstract ?? "",
+      citation: pub.citation ?? "",
+      links: buildPublicationLinks(pub),
     }))
     .sort((a, b) => {
       if (b.year !== a.year) return b.year - a.year;

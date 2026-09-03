@@ -26,7 +26,7 @@ export const memberRoleOrder = [
 
 export const roleLabels: Record<string, string> = {
   pi: "Principal Investigator",
-  graduate_student: "Graduate Students",
+  graduate_student: "PhD Students",
   masters_student: "Master's Students",
   undergraduate: "Undergraduates",
   postdoc: "Postdoctoral Researchers",

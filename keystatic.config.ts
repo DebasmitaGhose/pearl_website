@@ -19,6 +19,56 @@ function publicationLinkLabel(value: string) {
   return publicationLinkLabels[value] ?? value;
 }
 
+function publicationEntryFields() {
+  return {
+    title: fields.text({ label: "Title" }),
+    authors: fields.text({ label: "Authors" }),
+    venue: fields.text({
+      label: "Venue tag (short, e.g. HRI 2026)",
+    }),
+    journal: fields.text({
+      label: "Full venue",
+    }),
+    year: fields.integer({ label: "Year" }),
+    sortOrder: fields.integer({
+      label: "Sort order within year (higher = listed first)",
+      defaultValue: 0,
+    }),
+    doi: fields.text({ label: "DOI (optional)" }),
+    url: fields.url({ label: "Paper URL (optional)" }),
+    abstract: fields.text({
+      label: "Abstract (optional)",
+      multiline: true,
+    }),
+    citation: fields.text({
+      label: "BibTeX citation (optional; auto-generated if empty)",
+      multiline: true,
+    }),
+    links: fields.array(
+      fields.object({
+        label: fields.select({
+          label: "Link type",
+          options: [
+            { label: "Paper", value: "paper" },
+            { label: "Code", value: "code" },
+            { label: "Video", value: "video" },
+            { label: "Poster", value: "poster" },
+            { label: "Project", value: "project" },
+            { label: "PDF", value: "pdf" },
+          ],
+          defaultValue: "paper",
+        }),
+        url: fields.url({ label: "URL" }),
+      }),
+      {
+        label: "Links",
+        itemLabel: (props) =>
+          publicationLinkLabel(props.fields.label.value ?? "paper"),
+      }
+    ),
+  };
+}
+
 export const showAdminUI =
   process.env.NODE_ENV === "development" ||
   process.env.KEYSTATIC_SHOW_ADMIN === "true";
@@ -131,6 +181,20 @@ export default config({
         }),
       },
     }),
+    publications: singleton({
+      label: "Publications",
+      path: "content/publications",
+      format: "yaml",
+      schema: {
+        publications: fields.array(
+          fields.object(publicationEntryFields()),
+          {
+            label: "Publications",
+            itemLabel: (props) => props.fields.title.value || "Publication",
+          }
+        ),
+      },
+    }),
   },
   collections: {
     members: collection({
@@ -144,7 +208,7 @@ export default config({
           label: "Role",
           options: [
             { label: "Principal Investigator", value: "pi" },
-            { label: "Graduate Student", value: "graduate_student" },
+            { label: "PhD Student", value: "graduate_student" },
             { label: "Master's Student", value: "masters_student" },
             { label: "Undergraduate", value: "undergraduate" },
             { label: "Postdoctoral Researcher", value: "postdoc" },
@@ -166,51 +230,6 @@ export default config({
           label: "Active member",
           defaultValue: true,
         }),
-      },
-    }),
-    publications: collection({
-      label: "Publications",
-      slugField: "title",
-      path: "content/publications/*",
-      format: "yaml",
-      schema: {
-        title: fields.slug({ name: { label: "Title" } }),
-        authors: fields.text({ label: "Authors" }),
-        venue: fields.text({
-          label: "Venue tag (short, e.g. HRI 2026)",
-        }),
-        journal: fields.text({
-          label: "Full venue (optional, for your records)",
-        }),
-        year: fields.integer({ label: "Year" }),
-        sortOrder: fields.integer({
-          label: "Sort order within year (higher = listed first)",
-          defaultValue: 0,
-        }),
-        doi: fields.text({ label: "DOI (optional)" }),
-        url: fields.url({ label: "Paper URL (optional)" }),
-        links: fields.array(
-          fields.object({
-            label: fields.select({
-              label: "Link type",
-              options: [
-                { label: "Paper", value: "paper" },
-                { label: "Code", value: "code" },
-                { label: "Video", value: "video" },
-                { label: "Poster", value: "poster" },
-                { label: "Project", value: "project" },
-                { label: "PDF", value: "pdf" },
-              ],
-              defaultValue: "paper",
-            }),
-            url: fields.url({ label: "URL" }),
-          }),
-          {
-            label: "Links",
-            itemLabel: (props) =>
-              publicationLinkLabel(props.fields.label.value ?? "paper"),
-          }
-        ),
       },
     }),
     news: collection({

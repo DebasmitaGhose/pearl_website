@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Open [http://127.0.0.1:43123/keystatic](http://127.0.0.1:43123/keystatic)
+Open [http://127.0.0.1:3000/keystatic](http://127.0.0.1:3000/keystatic)
 
 The admin UI is only available while `npm run dev` is running (or when `KEYSTATIC_SHOW_ADMIN=true` in production).
 
@@ -138,9 +138,9 @@ Each person on the Team page shows: photo, **Website**, and **Google Scholar** l
 
 ### Publications (YAML)
 
-Edit files in `content/publications/*.yaml` or use Keystatic **Publications**.
+Edit **`content/publications.yaml`** or use Keystatic **Publications**. All papers live in one file as a list — add a new entry under `publications:` instead of creating a separate file per paper.
 
-Each entry uses a short **Venue tag** (e.g. `HRI 2026`) shown on the list. Add optional **Links** (Paper, Code, Video, Poster, Project, PDF) — these appear as small buttons beside each paper. Use **Sort order within year** (higher numbers appear first under that year). The full venue name can stay in **Full venue** for your records.
+Each entry uses a short **Venue tag** (e.g. `HRI 2026`) shown on the list. Add optional **Links** (Paper, Code, Video, Poster, Project, PDF) — these appear as small buttons beside each paper. Use **Sort order within year** (higher numbers appear first under that year). The full venue name goes in **Full venue**.
 
 ---
 

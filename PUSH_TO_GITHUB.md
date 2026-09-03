@@ -116,7 +116,7 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:43123
+Open http://127.0.0.1:3000
 
 ---
 

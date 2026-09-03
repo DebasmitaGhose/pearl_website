@@ -8,7 +8,7 @@ export default async function TeamPage() {
   return (
     <PageFrame
       title="Team"
-      description="Led by Dr. Debasmita Ghose. We are growing across graduate, master's, and undergraduate researchers."
+      description="Led by Dr. Debasmita Ghose. We are growing across PhD, master's, and undergraduate researchers."
       wide
     >
       <PeopleSections members={members} />

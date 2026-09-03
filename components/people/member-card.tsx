@@ -19,12 +19,24 @@ function resolvePhoto(photo?: string | null) {
   return `/images/members/${photo}`;
 }
 
+function isPlaceholderMember(name: string) {
+  return (
+    name.includes("Open Position") || name.includes("This could be you")
+  );
+}
+
+function memberDisplayName(name: string) {
+  if (isPlaceholderMember(name)) return "This could be you";
+  return name;
+}
+
 function MemberCard({ member }: { member: MemberEntry }) {
-  const isOpen = member.name.includes("Open Position");
+  const isPlaceholder = isPlaceholderMember(member.name);
+  const displayName = memberDisplayName(member.name);
   const src = resolvePhoto(member.photo);
 
   return (
-    <article className="flex w-36 flex-col items-center text-center">
+    <article className="flex flex-col items-center text-center">
       {src ? (
         <Image
           src={src}
@@ -38,14 +50,14 @@ function MemberCard({ member }: { member: MemberEntry }) {
           className="flex size-[88px] items-center justify-center rounded-full bg-muted text-sm text-muted-foreground"
           aria-hidden
         >
-          {isOpen ? "?" : member.name.slice(0, 1)}
+          {isPlaceholder ? "?" : member.name.slice(0, 1)}
         </div>
       )}
       <h3 className="mt-3 text-sm font-medium leading-snug text-foreground">
-        {member.name}
+        {displayName}
       </h3>
       <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
-        {isOpen ? (
+        {isPlaceholder ? (
           <Link href="/join" className="text-foreground hover:underline">
             Join us
           </Link>
@@ -97,10 +109,10 @@ export function PeopleSections({ members }: { members: MemberEntry[] }) {
     <div className="space-y-10">
       {grouped.map((section) => (
         <section key={section.role}>
-          <h2 className="mb-5 text-sm font-semibold text-foreground">
+          <h2 className="mb-5 text-sm font-semibold text-primary">
             {section.label}
           </h2>
-          <div className="flex flex-wrap gap-8">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
             {section.members.map((member) => (
               <MemberCard key={member.slug} member={member} />
             ))}

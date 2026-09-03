@@ -60,13 +60,13 @@ Leave that terminal window **open**. When it says the app is ready, open in your
 
 | What | URL |
 |------|-----|
-| **Home** | http://127.0.0.1:43123/ |
-| **Research** | http://127.0.0.1:43123/research |
-| **Team** | http://127.0.0.1:43123/team |
-| **Publications** | http://127.0.0.1:43123/publications |
-| **News** | http://127.0.0.1:43123/news |
-| **Join the Lab** | http://127.0.0.1:43123/join |
-| **Content admin (Keystatic)** | http://127.0.0.1:43123/keystatic |
+| **Home** | http://127.0.0.1:3000/ |
+| **Research** | http://127.0.0.1:3000/research |
+| **Team** | http://127.0.0.1:3000/team |
+| **Publications** | http://127.0.0.1:3000/publications |
+| **News** | http://127.0.0.1:3000/news |
+| **Join the Lab** | http://127.0.0.1:3000/join |
+| **Content admin (Keystatic)** | http://127.0.0.1:3000/keystatic |
 
 **Preview workflow:** edit something → save → refresh the browser tab (or click another nav link). The dev server hot-reloads most changes automatically.
 
@@ -105,7 +105,7 @@ pearl-website/
 │   ├── research.mdoc             # Research page body
 │   ├── join.mdoc                 # Join page body
 │   ├── members/*.yaml            # Team members
-│   ├── publications/*.yaml       # One file per paper
+│   ├── publications.yaml         # All papers in one file
 │   └── news/*.mdoc               # One file per news item
 ├── public/
 │   ├── pearl-logo.svg            # Logo in header/footer
@@ -128,19 +128,19 @@ pearl-website/
 Best for: text, images, new news posts, publications, team members — without touching YAML/Markdown syntax.
 
 1. Run `npm run dev` (see Part 3).
-2. Open **http://127.0.0.1:43123/keystatic**.
+2. Open **http://127.0.0.1:3000/keystatic**.
 3. Use the left sidebar:
 
 | Sidebar item | What it controls | Preview at |
 |--------------|------------------|------------|
 | **Site Settings** | Lab name, tagline, email, address, footer | Every page (header/footer) |
-| **Home page** | Hero carousel slides | http://127.0.0.1:43123/ |
-| **About the Lab (Home page)** | About section on home | http://127.0.0.1:43123/ |
-| **Research page** | Research text + hero image | http://127.0.0.1:43123/research |
-| **Join the Lab page** | Join text + hero image | http://127.0.0.1:43123/join |
-| **News** | News posts (create / edit) | http://127.0.0.1:43123/news and home |
-| **Members** | Team photos, website, Scholar links | http://127.0.0.1:43123/team |
-| **Publications** | Papers, venue tags, link buttons | http://127.0.0.1:43123/publications |
+| **Home page** | Hero carousel slides | http://127.0.0.1:3000/ |
+| **About the Lab (Home page)** | About section on home | http://127.0.0.1:3000/ |
+| **Research page** | Research text + hero image | http://127.0.0.1:3000/research |
+| **Join the Lab page** | Join text + hero image | http://127.0.0.1:3000/join |
+| **News** | News posts (create / edit) | http://127.0.0.1:3000/news and home |
+| **Members** | Team photos, website, Scholar links | http://127.0.0.1:3000/team |
+| **Publications** | Papers, venue tags, link buttons | http://127.0.0.1:3000/publications |
 
 4. Click **Save** in Keystatic.
 5. Refresh the matching preview URL in another browser tab.
@@ -172,7 +172,7 @@ address: Department of Computer Science, University of Illinois Chicago, Chicago
 footerText: PEARL — University of Illinois Chicago
 ```
 
-Preview: refresh **http://127.0.0.1:43123/** (header, footer, home intro).
+Preview: refresh **http://127.0.0.1:3000/** (header, footer, home intro).
 
 ### Home carousel — `content/home.yaml`
 
@@ -182,7 +182,7 @@ carouselImages:
     caption: Optional caption
 ```
 
-Put image files in `public/images/home/`. Preview: **http://127.0.0.1:43123/**.
+Put image files in `public/images/home/`. Preview: **http://127.0.0.1:3000/**.
 
 ### Markdown pages — `content/about.mdoc`, `content/research.mdoc`, `content/join.mdoc`
 
@@ -201,9 +201,9 @@ Paragraph with **bold** and [links](/publications).
 
 Preview:
 
-- `about.mdoc` → http://127.0.0.1:43123/ (scroll to About)
-- `research.mdoc` → http://127.0.0.1:43123/research
-- `join.mdoc` → http://127.0.0.1:43123/join
+- `about.mdoc` → http://127.0.0.1:3000/ (scroll to About)
+- `research.mdoc` → http://127.0.0.1:3000/research
+- `join.mdoc` → http://127.0.0.1:3000/join
 
 **Note:** Keystatic reads `content/about.mdoc`, `content/research.mdoc`, and `content/join.mdoc` (not the older `content/about/index.mdoc` copies).
 
@@ -221,7 +221,7 @@ summary: "One line shown only if needed."
 Full text shown when the item is expanded. Supports **markdown**.
 ```
 
-Preview: **http://127.0.0.1:43123/news** — click the title to expand.
+Preview: **http://127.0.0.1:3000/news** — click the title to expand.
 
 ### Team member — `content/members/jane-doe.yaml`
 
@@ -239,27 +239,30 @@ Put photo in `public/images/members/jane-doe.jpg`.
 
 `role` options: `pi`, `graduate_student`, `masters_student`, `undergraduate`, `postdoc`, `alumni`.
 
-Preview: **http://127.0.0.1:43123/team**.
+Preview: **http://127.0.0.1:3000/team**.
 
-### Publication — `content/publications/my-paper.yaml`
+### Publications — `content/publications.yaml`
+
+All papers are listed in one file. Add a new entry under `publications:`:
 
 ```yaml
-title: "Full paper title"
-authors: "A. Author, B. Author"
-venue: "HRI 2026"
-journal: "Full venue name for your records"
-year: 2026
-sortOrder: 10
-links:
-  - label: paper
-    url: https://doi.org/10.xxxx/xxxxx
-  - label: video
-    url: https://youtube.com/watch?v=...
+publications:
+  - title: "Full paper title"
+    authors: "A. Author, B. Author"
+    venue: "HRI 2026"
+    journal: "Full venue name, location, and presentation type"
+    year: 2026
+    sortOrder: 10
+    links:
+      - label: paper
+        url: https://doi.org/10.xxxx/xxxxx
+      - label: video
+        url: https://youtube.com/watch?v=...
 ```
 
 `label` values: `paper`, `code`, `video`, `poster`, `project`, `pdf`.
 
-Preview: **http://127.0.0.1:43123/publications**.
+Preview: **http://127.0.0.1:3000/publications**.
 
 ---
 
@@ -335,7 +338,7 @@ Changes are saved to files under `content/` and `public/images/`. Commit and pus
 | Problem | Fix |
 |---------|-----|
 | `npm` not recognized | Reinstall Node.js; restart terminal; check PATH |
-| Port 43123 in use | Close other dev servers or run `npx next dev -p 43125` and use that port |
+| Port 3000 in use | Close other dev servers or run `npx next dev -p 43125` and use that port |
 | `/keystatic` 404 | Run `npm run dev`, not `npm run start` (unless `KEYSTATIC_SHOW_ADMIN=true`) |
 | Edited file, no change on site | Save file; hard refresh browser (`Ctrl+F5`); check you edited the file Keystatic uses (e.g. `content/research.mdoc`) |
 | Image broken | Path must be `/images/...` and file must exist under `public/images/` |
@@ -348,13 +351,13 @@ Changes are saved to files under `content/` and `public/images/`. Commit and pus
 
 After any edit, check the page you care about:
 
-- [ ] http://127.0.0.1:43123/ — carousel, about, latest news
-- [ ] http://127.0.0.1:43123/research
-- [ ] http://127.0.0.1:43123/team
-- [ ] http://127.0.0.1:43123/publications
-- [ ] http://127.0.0.1:43123/news (click titles to expand)
-- [ ] http://127.0.0.1:43123/join
+- [ ] http://127.0.0.1:3000/ — carousel, about, latest news
+- [ ] http://127.0.0.1:3000/research
+- [ ] http://127.0.0.1:3000/team
+- [ ] http://127.0.0.1:3000/publications
+- [ ] http://127.0.0.1:3000/news (click titles to expand)
+- [ ] http://127.0.0.1:3000/join
 
-Admin UI: http://127.0.0.1:43123/keystatic
+Admin UI: http://127.0.0.1:3000/keystatic
 
 For more detail on content fields, see [CONTENT_EDITING.md](CONTENT_EDITING.md).

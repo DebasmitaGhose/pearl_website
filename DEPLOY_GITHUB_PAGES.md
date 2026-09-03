@@ -8,7 +8,7 @@ This site is built as a **static export** and deployed to GitHub Pages. There is
 2. Push this codebase to `main`.
 3. Enable GitHub Pages (see below).
 
-**Local editing:** use `npm run dev` and http://127.0.0.1:43123/keystatic. The admin UI is **not** included in the static site GitHub Pages serves.
+**Local editing:** use `npm run dev` and http://127.0.0.1:3000/keystatic. The admin UI is **not** included in the static site GitHub Pages serves.
 
 ## One-time GitHub setup
 

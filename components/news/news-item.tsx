@@ -23,11 +23,13 @@ export function NewsItem({
           className="cursor-pointer list-none text-sm leading-relaxed [&::-webkit-details-marker]:hidden"
         >
           {item.date && (
-            <span className="mr-2 inline-block border border-border px-1.5 py-0.5 text-xs font-medium text-muted-foreground">
+            <span className="mr-2 inline-block rounded-md border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-xs font-medium text-primary">
               {formatDateTag(item.date)}
             </span>
           )}
-          <span className="font-medium hover:underline">{item.title}</span>
+          <span className="font-medium text-foreground hover:text-primary hover:underline">
+            {item.title}
+          </span>
           <span className="ml-1.5 text-xs text-muted-foreground group-open:hidden">
             +
           </span>
@@ -36,7 +38,7 @@ export function NewsItem({
           </span>
         </summary>
 
-        <div className="mt-3 space-y-3 border-l border-border pl-3 sm:pl-4">
+        <div className="mt-3 space-y-3 border-l-2 border-pearl-accent/50 pl-3 sm:pl-4">
           {item.image && (
             <div className="relative aspect-[16/9] max-w-lg border border-border bg-muted">
               <Image

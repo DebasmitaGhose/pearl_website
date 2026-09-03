@@ -12,7 +12,7 @@ export function SiteChrome({
   children,
 }: SiteChromeProps) {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <SiteHeader institution={institution} labSubtitle={labSubtitle} />
       <div className="relative">{children}</div>
     </div>

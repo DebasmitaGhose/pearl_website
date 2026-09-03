@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:43123
+Open http://127.0.0.1:3000
 
 | Page | Route |
 |------|-------|
@@ -33,7 +33,7 @@ Open http://127.0.0.1:43123
 
 **Reference:** [CONTENT_EDITING.md](CONTENT_EDITING.md)
 
-Quick path: `npm run dev` → http://127.0.0.1:43123/keystatic
+Quick path: `npm run dev` → http://127.0.0.1:3000/keystatic
 
 | Content | Keystatic section | Main file(s) |
 |---------|-------------------|--------------|
@@ -44,15 +44,15 @@ Quick path: `npm run dev` → http://127.0.0.1:43123/keystatic
 | Join page | Join the Lab page | `content/join.mdoc` |
 | News | News | `content/news/*.mdoc` |
 | Team | Members | `content/members/*.yaml` |
-| Publications | Publications | `content/publications/*.yaml` |
+| Publications | Publications | `content/publications.yaml` |
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Dev server on port 43123 (use for editing + preview) |
+| `npm run dev` | Dev server on port 3000 (use for editing + preview) |
 | `npm run build` | Production build |
-| `npm run start` | Production server on port 43123 |
+| `npm run start` | Production server on port 3000 |
 
 ## Deploy
 

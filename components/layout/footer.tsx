@@ -17,7 +17,7 @@ export function Footer({
   footerText,
 }: FooterProps) {
   return (
-    <footer className="mt-12 border-t border-border">
+    <footer className="mt-12 border-t border-primary/10 bg-secondary/35">
       <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2">
         <LabLogo subtitle={labSubtitle} institution={institution} />
         <div className="space-y-1 text-sm">
@@ -25,7 +25,7 @@ export function Footer({
           <p className="text-muted-foreground">{address}</p>
           <Link
             href={`mailto:${contactEmail}`}
-            className="text-foreground hover:underline"
+            className="text-primary hover:text-pearl-blue hover:underline"
           >
             {contactEmail}
           </Link>
