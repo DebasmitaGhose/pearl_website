@@ -20,7 +20,9 @@ export function PageFrame({
           {title}
         </h1>
         {description && (
-          <p className="mt-3 text-muted-foreground">{description}</p>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            {description}
+          </p>
         )}
       </header>
       {children}

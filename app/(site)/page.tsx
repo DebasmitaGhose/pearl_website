@@ -24,7 +24,7 @@ export default async function HomePage() {
           Now recruiting
         </p>
         <p className="mt-2 font-display text-lg font-semibold leading-snug text-primary sm:text-xl">
-          PhD students, master&apos;s students, and undergraduates are welcome
+          Ph.D. students, master&apos;s students, and undergraduates are welcome
           to join PEARL.
         </p>
         <Link

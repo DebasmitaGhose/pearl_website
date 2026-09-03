@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { JoinOpportunityCards } from "@/components/join/join-opportunity-cards";
+import { JoinResearchOverview } from "@/components/join/join-research-overview";
 import { PageFrame } from "@/components/layout/page-frame";
 import { getJoinContent, getSiteSettings } from "@/lib/content";
 
@@ -10,7 +11,7 @@ export default async function JoinPage() {
   return (
     <PageFrame
       title="Join the lab"
-      description="PEARL welcomes motivated researchers who want to build robots that genuinely align with people. Open a card below for how to apply."
+      description="PEARL welcomes motivated researchers who want to build robots that genuinely align with people."
     >
       {join?.heroImage && (
         <div className="relative mb-8 aspect-[16/10] border border-border bg-muted">
@@ -25,10 +26,12 @@ export default async function JoinPage() {
         </div>
       )}
 
+      <JoinResearchOverview />
+
       <JoinOpportunityCards />
 
       <div className="mt-10 border-t border-border pt-6">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-base text-muted-foreground">
           Questions?{" "}
           <a
             href={`mailto:${site.contactEmail}`}

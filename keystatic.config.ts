@@ -229,7 +229,7 @@ export default config({
           label: "Role",
           options: [
             { label: "Principal Investigator", value: "pi" },
-            { label: "PhD Student", value: "graduate_student" },
+            { label: "Ph.D. Student", value: "graduate_student" },
             { label: "Master's Student", value: "masters_student" },
             { label: "Undergraduate", value: "undergraduate" },
             { label: "Postdoctoral Researcher", value: "postdoc" },
