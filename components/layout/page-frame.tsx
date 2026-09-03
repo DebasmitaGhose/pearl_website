@@ -15,7 +15,7 @@ export function PageFrame({
 }: PageFrameProps) {
   return (
     <div
-      className={`mx-auto px-4 py-8 sm:px-6 sm:py-10 ${wide ? "max-w-5xl" : "max-w-3xl"}`}
+      className={`mx-auto px-4 py-8 sm:px-6 sm:py-10 ${wide ? "max-w-6xl" : "max-w-4xl"}`}
     >
       <header className="mb-8 border-b border-primary/15 pb-6">
         <h1 className="font-display text-2xl font-semibold text-primary sm:text-3xl">

@@ -7,7 +7,7 @@ export default async function ResearchPage() {
 
   if (!research.theme && research.areas.length === 0) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-16 text-sm text-muted-foreground sm:px-6">
+      <div className="mx-auto max-w-4xl px-4 py-16 text-sm text-muted-foreground sm:px-6">
         Research page content has not been added yet.
       </div>
     );

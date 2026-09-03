@@ -18,7 +18,7 @@ export default async function HomePage() {
     : null;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6">
       <section className="mt-6 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-6 py-6 sm:px-8 sm:py-7">
         <p className="font-display text-lg font-semibold leading-snug text-primary sm:text-xl">
           We are hiring Ph.D., master&apos;s, and undergraduate students to join
@@ -47,7 +47,7 @@ export default async function HomePage() {
 
       <section className="border-t border-primary/10 py-8">
         <h2 className="font-display text-xl font-semibold text-primary">About the lab</h2>
-        <div className="mt-4 max-w-3xl">
+        <div className="mt-4 max-w-4xl">
           {aboutContent ? (
             <div className="prose prose-neutral max-w-none">
               {aboutContent}

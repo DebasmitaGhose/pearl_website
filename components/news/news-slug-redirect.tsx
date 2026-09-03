@@ -17,7 +17,7 @@ export function NewsSlugRedirect({ slug }: { slug: string }) {
   }, [slug]);
 
   return (
-    <p className="mx-auto max-w-5xl px-4 py-10 text-sm text-muted-foreground">
+    <p className="mx-auto max-w-6xl px-4 py-10 text-sm text-muted-foreground">
       Opening news item…
     </p>
   );

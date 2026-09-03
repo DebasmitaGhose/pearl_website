@@ -7,7 +7,7 @@ export default async function AdvisingPage() {
 
   if (!advising) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-16 text-base text-muted-foreground sm:px-6">
+      <div className="mx-auto max-w-4xl px-4 py-16 text-base text-muted-foreground sm:px-6">
         Advising statement content has not been added yet.
       </div>
     );
