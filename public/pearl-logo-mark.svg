@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <!-- Human hand, top, cupped palm facing down -->
+  <g fill="currentColor">
+    <path d="M62 22c4 18 8 32 18 44 4 5 10 9 17 12 2-5 3-9 3-13-5-2-9-5-12-9-8-10-12-22-14-34z" opacity="0.95"/>
+    <path d="M98 68c10 3 18 10 22 19l-11 6c-3-6-8-11-16-13z" opacity="0.9"/>
+    <!-- Cupped fingers curling inward over pearl -->
+    <path d="M78 78c-1 12 1 22 6 28 2-2 4-5 5-8 0-7-1-14-2-20z" opacity="0.95"/>
+    <path d="M92 74c0 14 0 24 1 32 3-1 5-4 6-7 0-9 0-16-1-25z" opacity="0.98"/>
+    <path d="M106 76c2 12 2 21 0 29-2 1-5 2-7 2 2-9 3-18 3-27z" opacity="0.95"/>
+    <path d="M118 80c3 10 3 18 1 25-3 0-5-1-7-2 3-8 4-15 4-23z" opacity="0.88"/>
+  </g>
+
+  <!-- Pearl with soft body + glimmer -->
+  <defs>
+    <radialGradient id="pearlBody" cx="38%" cy="34%" r="65%">
+      <stop offset="0%" stop-color="currentColor" stop-opacity="1"/>
+      <stop offset="70%" stop-color="currentColor" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="currentColor" stop-opacity="0.75"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="108" r="18" fill="url(#pearlBody)"/>
+  <ellipse cx="93" cy="101" rx="7" ry="5.5" fill="#fff" opacity="0.35"/>
+  <g transform="translate(93, 100)" opacity="0.95">
+    <path d="M0 -9 C 1.1 -2, 1.1 2, 0 9 C -1.1 2, -1.1 -2, 0 -9 Z" fill="#fff"/>
+    <path d="M-9 0 C -2 -1.1, 2 -1.1, 9 0 C 2 1.1, -2 1.1, -9 0 Z" fill="#fff"/>
+    <path d="M-5.5 -5.5 C -0.8 -2, 2 0.8, 5.5 5.5 C 2 0.8, -0.8 -2, -5.5 -5.5 Z" fill="#fff" opacity="0.85"/>
+    <path d="M 5.5 -5.5 C 2 -0.8, -0.8 2, -5.5 5.5 C -2 0.8, 0.8 -2, 5.5 -5.5 Z" fill="#fff" opacity="0.85"/>
+    <circle cx="0" cy="0" r="1.6" fill="#fff"/>
+  </g>
+
+  <!-- Robot hand, bottom, cupped palm facing up -->
+  <g fill="currentColor">
+    <path d="M138 178c-6-16-14-28-26-38l10-10c10 9 18 20 24 34z" opacity="0.92"/>
+    <path d="M98 138l22 10-8 14-22-11z" opacity="0.95"/>
+    <!-- Cupped mechanical fingers -->
+    <rect x="78" y="112" width="8" height="26" rx="2" opacity="0.95" transform="rotate(12 82 125)"/>
+    <rect x="92" y="108" width="9" height="30" rx="2" opacity="0.98"/>
+    <rect x="108" y="112" width="8" height="26" rx="2" opacity="0.92" transform="rotate(-12 112 125)"/>
+    <path d="M72 136l-12-14 8-6 12 13z" opacity="0.88"/>
+    <circle cx="124" cy="158" r="2.5" opacity="0.8"/>
+    <circle cx="116" cy="168" r="2" opacity="0.65"/>
+  </g>
+</svg>

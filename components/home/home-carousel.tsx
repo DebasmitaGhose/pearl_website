@@ -38,7 +38,7 @@ export function HomeCarousel({
     return (
       <div
         className={cn(
-          "flex aspect-[16/10] flex-col items-center justify-center gap-2 border border-border bg-muted text-muted-foreground",
+          "flex h-[240px] flex-col items-center justify-center gap-2 border border-border bg-muted text-muted-foreground sm:h-[290px] lg:h-[320px]",
           className
         )}
         aria-label="Image carousel placeholder"
@@ -61,7 +61,7 @@ export function HomeCarousel({
         className
       )}
     >
-      <div className="relative aspect-[16/10] w-full">
+      <div className="relative h-[240px] w-full sm:h-[290px] lg:h-[320px]">
         {slides.map((item, i) => (
           <div
             key={item.src}
@@ -104,7 +104,7 @@ export function HomeCarousel({
       </div>
 
       {(slide.caption || count > 1) && (
-        <div className="flex items-center justify-between gap-4 border-t border-border/40 bg-background/80 px-4 py-3 sm:px-5">
+        <div className="flex items-center justify-between gap-4 border-t border-border/40 bg-background/80 px-4 py-2 sm:px-5">
           <p className="text-sm text-muted-foreground">
             {slide.caption || ""}
           </p>

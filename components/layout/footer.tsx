@@ -3,7 +3,6 @@ import Link from "next/link";
 
 type FooterProps = {
   labSubtitle: string;
-  institution: string;
   contactEmail: string;
   address: string;
   footerText: string;
@@ -11,7 +10,6 @@ type FooterProps = {
 
 export function Footer({
   labSubtitle,
-  institution,
   contactEmail,
   address,
   footerText,
@@ -19,10 +17,7 @@ export function Footer({
   return (
     <footer className="mt-12 border-t border-primary/30 bg-gradient-to-br from-pearl-blue via-primary to-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2">
-        <LabLogo
-          subtitle={labSubtitle}
-          institution={institution}
-        />
+        <LabLogo subtitle={labSubtitle} variant="onDark" />
         <div className="space-y-1 text-sm">
           <p className="font-medium text-primary-foreground">Contact</p>
           <p className="text-primary-foreground/75">{address}</p>

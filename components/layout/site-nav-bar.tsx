@@ -30,7 +30,7 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "rounded-lg px-3.5 py-2 text-sm font-semibold tracking-wide transition-colors",
+        "rounded-md px-3 py-2 text-[0.95rem] font-semibold tracking-wide transition-colors sm:px-3.5 sm:text-lg",
         onDark
           ? active
             ? "bg-primary-foreground text-primary shadow-sm"
@@ -50,7 +50,7 @@ export function SiteNavBar({ variant = "default" }: { variant?: "default" | "onD
 
   return (
     <nav
-      className="flex flex-wrap items-center justify-end gap-1 sm:gap-1.5"
+      className="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2"
       aria-label="Main navigation"
     >
       {visibleNavigation.map((item) => (

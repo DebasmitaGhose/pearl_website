@@ -63,8 +63,8 @@ export const joinResearchOverview = {
       body: "Experience working with physical robots and developing methods for robot control, task and motion planning, manipulation, perception, and navigation. Much of our research is ultimately deployed and tested on real robotic systems, often in environments where robots interact with people.",
     },
     {
-      title: "AI algorithms:",
-      body: "Developing algorithms that allow robots to learn from data, people, demonstrations, or interaction. The specific methods vary across projects and may involve learning, decision-making, multimodal reasoning, planning, or other approaches for enabling robots to behave effectively with people and in changing environments.",
+      title: "Machine learning:",
+      body: "Developing algorithms that allow robots to learn from data, people, demonstrations, or interaction. The specific methods vary across projects and may involve computer vision, natural language processing, or other approaches for enabling robots to behave effectively with people and in changing environments.",
     },
     {
       title: "Physical prototyping and systems building:",

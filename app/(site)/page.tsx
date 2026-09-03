@@ -19,8 +19,8 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      <section className="mt-6 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-6 py-6 sm:px-8 sm:py-7">
-        <p className="font-display text-lg font-semibold leading-snug text-primary sm:text-xl">
+      <section className="mt-5 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-5 py-4 sm:px-7 sm:py-5">
+        <p className="font-display text-base font-semibold leading-snug text-primary sm:text-lg">
           We are hiring Ph.D., master&apos;s, and undergraduate students to join
           the lab.{" "}
           <Link
@@ -33,9 +33,9 @@ export default async function HomePage() {
         </p>
       </section>
 
-      <section className="py-8 sm:py-10">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-start lg:gap-10">
-          <div className="space-y-3 order-2 lg:order-1">
+      <section className="py-5 sm:py-6">
+        <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr] lg:items-start lg:gap-8">
+          <div className="space-y-2 order-2 lg:order-1">
             <h1 className="font-display text-2xl font-semibold leading-tight text-primary sm:text-3xl">
               {site.labSubtitle}
             </h1>
@@ -45,9 +45,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-primary/10 py-8">
+      <section className="border-t border-primary/10 py-6">
         <h2 className="font-display text-xl font-semibold text-primary">About the lab</h2>
-        <div className="mt-4 max-w-4xl">
+        <div className="mt-3 max-w-4xl">
           {aboutContent ? (
             <div className="prose prose-neutral max-w-none">
               {aboutContent}

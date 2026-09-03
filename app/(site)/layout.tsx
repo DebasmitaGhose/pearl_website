@@ -10,11 +10,10 @@ export default async function SiteLayout({
   const site = await getSiteSettings();
 
   return (
-    <SiteChrome labSubtitle={site.labSubtitle} institution={site.institution}>
+    <SiteChrome labSubtitle={site.labSubtitle}>
       <main>{children}</main>
       <Footer
         labSubtitle={site.labSubtitle}
-        institution={site.institution}
         contactEmail={site.contactEmail}
         address={site.address}
         footerText={site.footerText}
