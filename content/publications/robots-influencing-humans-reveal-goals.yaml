@@ -4,3 +4,6 @@ venue: "AURO"
 journal: "Autonomous Robots (AURO), 2026"
 year: 2026
 sortOrder: 17
+links:
+  - label: paper
+    url: https://scazlab.yale.edu/sites/default/files/files/RA_L___Adaptive_CDP%20(9).pdf
