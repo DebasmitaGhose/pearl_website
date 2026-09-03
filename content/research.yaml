@@ -1,0 +1,53 @@
+theme: >-
+  We study how robots can infer, anticipate, and adapt to human goals during
+  real-world collaboration—not just execute fixed scripts. Our work sits at the
+  intersection of human-robot interaction, robot learning, and socially assistive
+  systems. We build algorithms and deployable platforms, then validate them with
+  human participants in lab studies and in-the-wild deployments.
+areas:
+  - title: Goal inference and adaptation
+    slug: goal-inference
+    description: >-
+      How can a robot figure out what a person wants when goals are ambiguous,
+      unspoken, or change mid-task? We develop methods that combine observed
+      actions, language, and planning—so robots can assist without becoming a
+      nuisance.
+    publicationTitles:
+      - "Robots Influencing Humans to Reveal their Goals during Collaboration and Competition"
+      - "On-the-Job Robot Adaptation to Human Goals"
+      - "Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration"
+      - "I've Changed My Mind: Robots Adapting to Changing Human Goals during Collaboration"
+      - "Adapting Robot Actions to Human Intentions in Dynamic Shared Environments"
+      - "Planning with Critical Decision Points: Robots that Influence Humans to Infer Their Strategy"
+  - title: Human-robot collaboration
+    slug: collaboration
+    description: >-
+      We design interaction mechanisms that let people shape robot behavior through
+      natural communication—verbal commands, demonstrations, and transparent policy
+      overlays—while robots maintain fluent task performance.
+    publicationTitles:
+      - "Interactive Policy Shaping for Human-Robot Collaboration with Transparent Matrix Overlays"
+      - "Why We Should Build Robots that both Teach and Learn"
+  - title: Socially assistive robotics
+    slug: assistive
+    description: >-
+      We build and deploy systems that support wellbeing in everyday environments,
+      including mental health applications and robot-led activities for people living
+      with dementia and their care partners.
+    publicationTitles:
+      - "Exploring Robot-Led Activities between People Living with Dementia and Family Care Partners"
+      - "A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot"
+      - "Integrating Multimodal Affective Signals for Stress Detection from Audio-Visual Data"
+      - "The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes"
+  - title: Perception and learning
+    slug: perception
+    description: >-
+      We study how robots should represent the visual world when humans are the
+      ultimate judge of success—from recycling robots to satellite image
+      segmentation—with active learning and human-tailored representations.
+    publicationTitles:
+      - "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models"
+      - "A Survey on Data Curation for Visual Contrastive Learning: Why Crafting Effective Positive and Negative Pairs Matters"
+      - "Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot"
+      - "Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images"
+      - "Pedestrian Detection In Thermal Images Using Saliency Maps"

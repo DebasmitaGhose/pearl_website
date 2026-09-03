@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-canvas: var(--canvas);
+  --color-pearl-accent: var(--pearl-accent);
+  --color-pearl-blue: var(--pearl-blue);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Warm off-white */
+  --background: oklch(0.985 0.008 85);
+  --foreground: oklch(0.32 0.03 285);
+  --card: oklch(0.995 0.006 85);
+  --card-foreground: oklch(0.32 0.03 285);
+  --popover: oklch(0.995 0.006 85);
+  --popover-foreground: oklch(0.32 0.03 285);
+  /* Dusty plum — main color */
+  --primary: oklch(0.48 0.1 285);
+  --primary-foreground: oklch(0.99 0.005 85);
+  /* Soft lavender — same hue family as primary */
+  --secondary: oklch(0.9 0.04 285);
+  --secondary-foreground: oklch(0.38 0.08 285);
+  --muted: oklch(0.94 0.02 85);
+  --muted-foreground: oklch(0.5 0.03 285);
+  --accent: oklch(0.93 0.035 285);
+  --accent-foreground: oklch(0.38 0.08 285);
+  --destructive: oklch(0.55 0.18 25);
+  --border: oklch(0.9 0.025 285);
+  --input: oklch(0.9 0.025 285);
+  --ring: oklch(0.48 0.1 285);
+  --canvas: oklch(0.98 0.01 85);
+  /* Muted gold — awards only */
+  --pearl-accent: oklch(0.68 0.11 75);
+  /* Deeper plum for hovers */
+  --pearl-blue: oklch(0.4 0.1 285);
+  --sidebar: oklch(0.38 0.08 285);
+  --sidebar-foreground: oklch(0.97 0.01 85);
+  --sidebar-border: oklch(0.48 0.07 285);
+  --sidebar-accent: oklch(0.44 0.08 285);
+  --sidebar-accent-foreground: oklch(0.99 0.005 85);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply min-h-screen text-foreground antialiased;
+    background:
+      radial-gradient(
+        ellipse 90% 70% at 100% 0%,
+        oklch(0.92 0.04 285 / 0.4),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 80% 60% at 0% 100%,
+        oklch(0.94 0.03 85 / 0.5),
+        transparent 55%
+      ),
+      var(--background);
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-none leading-relaxed text-foreground;
+  }
+
+  .prose :where(h2, h3, h4) {
+    @apply font-display font-semibold text-primary;
+  }
+
+  .prose :where(h2) {
+    @apply mt-8 mb-3 text-xl;
+  }
+
+  .prose :where(h3) {
+    @apply mt-6 mb-2 text-lg;
+  }
+
+  .prose :where(p, ul, ol) {
+    @apply my-3 text-foreground/80;
+  }
+
+  .prose :where(ul, ol) {
+    @apply pl-5;
+  }
+
+  .prose :where(li) {
+    @apply my-1;
+  }
+
+  .prose :where(a) {
+    @apply font-medium text-primary underline decoration-secondary underline-offset-4 hover:text-pearl-blue;
+  }
+
+  .prose :where(strong) {
+    @apply font-semibold text-foreground;
+  }
+
+  .publication-panel {
+    display: none;
+  }
+
+  .publication-actions:has(.publication-toggle-abstract:checked)
+    .publication-panel-abstract {
+    display: block;
+  }
+
+  .publication-actions:has(.publication-toggle-citation:checked)
+    .publication-panel-citation {
+    display: block;
+  }
+
+  .publication-actions:has(.publication-toggle-abstract:checked)
+    .publication-label-abstract {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .publication-actions:has(.publication-toggle-citation:checked)
+    .publication-label-citation {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .join-opportunity-body {
+    display: none;
+  }
+
+  .join-opportunity-card:has(.join-opportunity-toggle:checked) {
+    border-color: color-mix(in oklab, var(--primary) 25%, var(--border));
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  }
+
+  .join-opportunity-card:has(.join-opportunity-toggle:checked)
+    .join-opportunity-body {
+    display: block;
+  }
+
+  .join-opportunity-card:has(.join-opportunity-toggle:checked)
+    .join-opportunity-icon {
+    transform: rotate(45deg);
+  }
+
+  /* Reserve room for ~3 citations so short lists don’t leave uneven cards */
+  .research-area-preview {
+    min-height: 10.5rem;
+  }
+
+  .research-area-extra {
+    display: none;
+  }
+
+  .research-area-label-less {
+    display: none;
+  }
+
+  .research-area-pubs:has(.research-area-toggle:checked) .research-area-extra {
+    display: block;
+  }
+
+  .research-area-pubs:has(.research-area-toggle:checked)
+    .research-area-label-more {
+    display: none;
+  }
+
+  .research-area-pubs:has(.research-area-toggle:checked)
+    .research-area-label-less {
+    display: inline;
+  }
+}

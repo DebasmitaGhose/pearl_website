@@ -1,0 +1,299 @@
+# Canonical file: content/publications.yaml (edit that file; this copy is kept in sync)
+publications:
+  - title: "Robots Influencing Humans to Reveal their Goals during Collaboration and Competition"
+    authors: "Debasmita Ghose*, Oz Gitelson*, Michal Lewkowicz, Jake Brawer, Alessandro Roncone, Marynel Vazquez, Brian Scassellati"
+    venue: "AURO"
+    journal: "Autonomous Robots (AURO), 2026"
+    year: 2026
+    sortOrder: 17
+    abstract: "We propose a unified strategy for fast goal inference in human–robot interaction. The core idea is to drive the human toward Critical Decision Points (CDPs)—states where competing human strategies prescribe different next actions and thus maximally reveal the goal. We formalise CDPs using a goal‑conditioned policy divergence measure and incorporate them into a Receding‑Horizon Planner that explores future action sequences while optimizing a cost function balancing task progress and information gain. We evaluate this approach in both a collaborative, fully observable cooking task and a competitive, partially observable hide‑and‑seek game, each in simulation and on real robots. In both scenarios, our method infers human goals more accurately and earlier than baseline strategies."
+    citation: |
+      @article{robotsinfluencinghumanstorevealtheirgoalsduringcollaborationandcompetition,
+        author = {Debasmita Ghose and Oz Gitelson and Michal Lewkowicz and Jake Brawer and Alessandro Roncone and Marynel Vazquez and Brian Scassellati},
+        title = {Robots Influencing Humans to Reveal their Goals during Collaboration and Competition},
+        journal = {Autonomous Robots},
+        year = {2026},
+      }
+    links:
+      - label: paper
+        url: https://scazlab.yale.edu/sites/default/files/files/RA_L___Adaptive_CDP%20(9).pdf
+  - title: "On-the-Job Robot Adaptation to Human Goals"
+    authors: "Debasmita Ghose"
+    venue: "RSS Pioneers"
+    journal: "Robotics: Science and Systems (RSS) Pioneers Workshop, Sydney, Australia, 2026"
+    year: 2026
+    sortOrder: 16
+    abstract: "Human-robot collaboration requires robots to maintain shared understanding with people as goals change during interaction. This work presents methods for on-the-job adaptation that let a robot infer and update its belief about a human partner's goals from natural interaction signals—observed behavior, active influence at Critical Decision Points, and high-level language—without offline retraining or constant explicit supervision."
+    citation: |
+      @inproceedings{onthejobrobotadaptationtohumangoals,
+        author = {Debasmita Ghose},
+        title = {On-the-Job Robot Adaptation to Human Goals},
+        booktitle = {Robotics: Science and Systems (RSS) Pioneers Workshop, Sydney, Australia, 2026},
+        year = {2026},
+      }
+    links:
+      - label: paper
+        url: https://www.researchgate.net/profile/Debasmita-Ghose/publication/406238549_On-the-Job_Robot_Adaptation_to_Human_Goals/links/6a2498a9ab27545911091e96/On-the-Job-Robot-Adaptation-to-Human-Goals.pdf
+  - title: "Exploring Robot-Led Activities between People Living with Dementia and Family Care Partners"
+    authors: "Jirachaya Fern Limprayoon, Debasmita Ghose, Kayla Matheus, Paula V. Enriquez, Michal A. Lewkowicz, Moon Hwan Kim, Austin Narcomey, Natnaree Proud Ua-Arak, Andy Cheng, Chayan Sarkar, Joan K. Monin, Brian Scassellati"
+    venue: "Frontiers"
+    journal: "Frontiers in Robotics and AI, 2026"
+    year: 2026
+    sortOrder: 15
+    abstract: "This paper investigates the adaptation of a socially assistive robot, Ommie, originally designed to support people with anxiety, to address the specific needs of people living with dementia and their care partners. We explore how Ommie can be repurposed to guide shared deep breathing and singing activities. We refined the robot's behaviors through two interaction design sessions with people living with dementia and care partners, mediated by an occupational therapist. In a subsequent study with 17 pairs of people living with dementia and care partners, participants reported the interactions as easy to follow, calming, and familiar. Post-hoc video analysis revealed patterns of intimacy and synchrony, including frequent physical touch, mutual gaze, and rhythmic coordination. We also observed instances of personal memory recall and a playful atmosphere, in which pairs often used humor as a coping mechanism after deviations from the robot's instructions. From our observations, we discuss three design opportunity spaces: the robot as the focus for synchronization, as an instrument of joint play, and as a source of familiarity versus variety."
+    citation: |
+      @article{exploringrobotledactivitiesbetweenpeoplelivingwithdementiaandfamilycarepartners,
+        author = {Jirachaya Fern Limprayoon and Debasmita Ghose and Kayla Matheus and Paula V. Enriquez and Michal A. Lewkowicz and Moon Hwan Kim and Austin Narcomey and Natnaree Proud Ua-Arak and Andy Cheng and Chayan Sarkar and Joan K. Monin and Brian Scassellati},
+        title = {Exploring Robot-Led Activities between People Living with Dementia and Family Care Partners},
+        journal = {Frontiers in Robotics and AI},
+        year = {2026},
+      }
+    links:
+      - label: paper
+        url: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1772079/abstract
+  - title: "Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration"
+    authors: "Debasmita Ghose, Oz Gitelson, Marynel Vazquez, Brian Scassellati"
+    venue: "HRI"
+    journal: "ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), Edinburgh, Scotland (Oral)"
+    year: 2026
+    sortOrder: 14
+    abstract: "To collaborate with humans, robots must infer goals that are often ambiguous, difficult to articulate, or not drawn from a fixed set. Prior approaches restrict inference to a predefined goal set, rely only on observed actions, or depend exclusively on explicit instructions, making them brittle in real-world interactions. We present BALI (Bidirectional Action–Language Inference) for goal prediction, a method that integrates natural language preferences with observed human actions in a receding-horizon planning tree. BALI combines language and action cues from the human, asks clarifying questions only when the expected information gain from the answer outweighs the cost of interruption, and selects supportive actions that align with inferred goals. We evaluate the approach in collaborative cooking tasks, where goals may be novel to the robot and unbounded. Compared to baselines, BALI yields more stable goal predictions and significantly fewer mistakes."
+    citation: |
+      @inproceedings{openendedgoalinferencethroughactionsandlanguageforhumanrobotcollaboration,
+        author = {Debasmita Ghose and Oz Gitelson and Marynel Vazquez and Brian Scassellati},
+        title = {Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration},
+        booktitle = {ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), Edinburgh, Scotland (Oral)},
+        year = {2026},
+      }
+    links:
+      - label: paper
+        url: https://scazlab.yale.edu/sites/default/files/files/HRI_2026___BALI.pdf
+  - title: "A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot"
+    authors: "Kayla Matheus, Debasmita Ghose, Jirachaya Fern Limprayoon, Michal Lewkowicz, Brian Scassellati"
+    venue: "HRI"
+    journal: "HRI 2026 Interactivity Track, Edinburgh, Scotland — Best Demo Award"
+    year: 2026
+    sortOrder: 13
+    abstract: "We present the Ommie Deployable System (DS), a replicable, autonomous platform for long-term, in-the-wild mental health applications with the Ommie robot. Ommie DS builds on prior anxiety-focused deployments by introducing robust hardware, enhanced sensing, modular software, a companion tablet, and wireless multi-device architecture to support daily deep-breathing interactions in homes. Designed using off-the-shelf components and rapid-prototyped enclosures, the system enables reliable multi-week use, remote monitoring, and easy customization. By providing a durable, open, and researcher-friendly platform, Ommie DS supports scalable studies of wellbeing-focused social robots in the real world."
+    citation: |
+      @inproceedings{areplicableautonomoussystemforinthewildmentalhealthapplicationswiththeommierobot,
+        author = {Kayla Matheus and Debasmita Ghose and Jirachaya Fern Limprayoon and Michal Lewkowicz and Brian Scassellati},
+        title = {A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot},
+        booktitle = {HRI 2026 Interactivity Track, Edinburgh, Scotland — Best Demo Award},
+        year = {2026},
+      }
+    links:
+      - label: paper
+        url: https://drive.google.com/file/d/1AqXdJhaLXQVho50AsVMS9qyitYT7pauA/view?usp=sharing
+      - label: video
+        url: https://drive.google.com/file/d/1k--UVi2cg_V5o7Ri_AWBeNTlnFzC-Krc/view?usp=sharing
+  - title: "I've Changed My Mind: Robots Adapting to Changing Human Goals during Collaboration"
+    authors: "Debasmita Ghose*, Oz Gitelson*, Ryan Jin, Grace Abawe, Marynel Vazquez, Brian Scassellati"
+    venue: "RA-L"
+    journal: "IEEE Robotics and Automation Letters (RA-L), 2025 (IROS 2026)"
+    year: 2025
+    sortOrder: 12
+    abstract: "For effective human-robot collaboration, a robot must align its actions with human goals, even as they change mid-task. Prior approaches often assume fixed goals, reducing goal prediction to a one-time inference. However, in real-world scenarios, humans frequently shift goals, making it challenging for robots to adapt without explicit communication. We propose a method for detecting goal changes by tracking multiple candidate action sequences and verifying their plausibility against a policy bank. Upon detecting a change, the robot refines its belief in relevant past actions and constructs Receding Horizon Planning (RHP) trees to actively select actions that assist the human while encouraging Differentiating Actions to reveal their updated goal. We evaluate our approach in a collaborative cooking environment with up to 30 unique recipes and compare it to three comparable human goal prediction algorithms. Our method outperforms all baselines, quickly converging to the correct goal after a switch, reducing task completion time, and improving collaboration efficiency."
+    citation: |
+      @article{ivechangedmymindrobotsadaptingtochanginghumangoalsduringcollaboration,
+        author = {Debasmita Ghose and Oz Gitelson and Ryan Jin and Grace Abawe and Marynel Vazquez and Brian Scassellati},
+        title = {I've Changed My Mind: Robots Adapting to Changing Human Goals during Collaboration},
+        journal = {IEEE Robotics and Automation Letters},
+        year = {2025},
+      }
+    links:
+      - label: paper
+        url: https://scazlab.yale.edu/sites/default/files/files/RA_L___Adaptive_CDP%20(9).pdf
+  - title: "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models"
+    authors: "Vijeta Deshpande, Debasmita Ghose, John D. Patterson, Roger Beaty, Anna Rumshisky"
+    venue: "EMNLP"
+    journal: "EMNLP 2025, Suzhou, China (Main Conference, Poster)"
+    year: 2025
+    sortOrder: 11
+    abstract: "Diverse language model responses are crucial for creative generation, open-ended tasks, and self-improvement training. We show that common diversity metrics, and even reward models used for preference optimization, systematically bias models toward shorter outputs, limiting expressiveness. To address this, we introduce Diverse, not Short (Diverse-NS), a length-controlled data selection strategy that improves response diversity while maintaining length parity. By generating and filtering preference data that balances diversity, quality, and length, Diverse-NS enables effective training using only 3,000 preference pairs. Applied to LLaMA-3.1-8B and the Olmo-2 family, Diverse-NS substantially enhances lexical and semantic diversity. We show consistent improvement in diversity with minor reduction or gains in response quality on four creative generation tasks: Divergent Associations, Persona Generation, Alternate Uses, and Creative Writing. Surprisingly, experiments with the Olmo-2 model family (7B, and 13B) show that smaller models like Olmo-2-7B can serve as effective \"diversity teachers\" for larger models. By explicitly addressing length bias, our method efficiently pushes models toward more diverse and expressive outputs."
+    citation: |
+      @inproceedings{diversenotshortalengthcontrolleddataselectionstrategyforimprovingresponsediversityoflanguagemodels,
+        author = {Vijeta Deshpande and Debasmita Ghose and John D. Patterson and Roger Beaty and Anna Rumshisky},
+        title = {Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models},
+        booktitle = {EMNLP 2025, Suzhou, China (Main Conference, Poster)},
+        year = {2025},
+      }
+    links:
+      - label: paper
+        url: https://arxiv.org/pdf/2502.08134
+  - title: "Adapting Robot Actions to Human Intentions in Dynamic Shared Environments"
+    authors: "Debasmita Ghose"
+    venue: "HRI Pioneers"
+    journal: "ACM/IEEE HRI Pioneers Workshop, Melbourne, Australia, 2025"
+    year: 2025
+    sortOrder: 10
+    abstract: "In my work, I study how robots can infer and adapt to human intentions in dynamic environments. My prior work focuses on three key methods for adapting robot actions based on inferences of human intent: passive observation, active influence, and high-level verbal commands. Moving forward, I aim to improve how robots anticipate and respond to evolving human behavior by addressing the challenges of predicting changes in human intentions and quantifying human adaptability."
+    citation: |
+      @inproceedings{adaptingrobotactionstohumanintentionsindynamicsharedenvironments,
+        author = {Debasmita Ghose},
+        title = {Adapting Robot Actions to Human Intentions in Dynamic Shared Environments},
+        booktitle = {ACM/IEEE HRI Pioneers Workshop, Melbourne, Australia, 2025},
+        year = {2025},
+      }
+    links:
+      - label: video
+        url: https://www.linkedin.com/posts/human-robot-interaction-pioneers_hripioneers2025-activity-7296208123474673665-3ROi
+  - title: "A Survey on Data Curation for Visual Contrastive Learning: Why Crafting Effective Positive and Negative Pairs Matters"
+    authors: "Shasvat Desai, Debasmita Ghose, Deep Chakraborty"
+    venue: "Survey"
+    journal: "arXiv Preprint, 2025"
+    year: 2025
+    sortOrder: 9
+    abstract: "Visual contrastive learning aims to learn representations by contrasting similar (positive) and dissimilar (negative) pairs of data samples. The design of these pairs significantly impacts representation quality, training efficiency, and computational cost. A well-curated set of pairs leads to stronger representations and faster convergence. As contrastive pre-training sees wider adoption for solving downstream tasks, data curation becomes essential for optimizing its effectiveness. In this survey, we attempt to create a taxonomy of existing techniques for positive and negative pair curation in contrastive learning, and describe them in detail. We also examine the trade-offs and open research questions in data curation for contrastive learning."
+    citation: |
+      @misc{asurveyondatacurationforvisualcontrastivelearningwhycraftingeffectivepositiveandnegativepairsmatters,
+        author = {Shasvat Desai and Debasmita Ghose and Deep Chakraborty},
+        title = {A Survey on Data Curation for Visual Contrastive Learning: Why Crafting Effective Positive and Negative Pairs Matters},
+        year = {2025},
+        note = {arXiv Preprint, 2025},
+      }
+    links: []
+  - title: "Integrating Multimodal Affective Signals for Stress Detection from Audio-Visual Data"
+    authors: "Debasmita Ghose*, Oz Gitelson*, Brian Scassellati"
+    venue: "ICMI"
+    journal: "ACM International Conference on Multimodal Interaction (ICMI 2024), San Jose, Costa Rica"
+    year: 2024
+    sortOrder: 8
+    abstract: "Stress detection in real-world settings presents significant challenges due to the complexity of human emotional expression influenced by biological, psychological, and social factors. While traditional methods like EEG, ECG, and EDA sensors provide direct measures of physiological responses, they are unsuitable for everyday environments due to their intrusive nature. Therefore, using non-contact, commonly available sensors like cameras and microphones to detect stress would be helpful. In this work, we use stress indicators from four key affective modalities extracted from audio-visual data: facial expressions, vocal prosody, textual sentiment, and physical fidgeting. To achieve this, we first labeled 353 video clips featuring individuals in monologue scenarios discussing personal experiences, indicating whether or not the individual is stressed based on our four modalities. Then, to effectively integrate signals from the four modalities, we extract stress signals from our audio-visual data using unimodal classifiers. Finally, to explore how the different modalities would interact to predict if a person is stressed, we compare the performance of three multimodal fusion methods: intermediate fusion, voting-based late fusion, and learning-based late fusion. Results indicate that combining multiple modes of information can effectively leverage the strengths of different modalities and achieve an F1 score of 0.85 for binary stress detection. Moreover, an ablation study shows that the more modalities are integrated, the higher the F1 score for detecting stress across all fusion techniques, demonstrating that our selected modalities possess complementary stress indicators."
+    citation: |
+      @inproceedings{integratingmultimodalaffectivesignalsforstressdetectionfromaudiovisualdata,
+        author = {Debasmita Ghose and Oz Gitelson and Brian Scassellati},
+        title = {Integrating Multimodal Affective Signals for Stress Detection from Audio-Visual Data},
+        booktitle = {ACM International Conference on Multimodal Interaction (ICMI 2024), San Jose, Costa Rica},
+        year = {2024},
+      }
+    links:
+      - label: paper
+        url: https://scazlab.yale.edu/sites/default/files/files/ICMI_2024___Stress_Detection%20(13).pdf
+      - label: project
+        url: https://sites.google.com/view/stress-detection-icmi-24/home
+  - title: "Planning with Critical Decision Points: Robots that Influence Humans to Infer Their Strategy"
+    authors: "Debasmita Ghose*, Michal Lewkowicz*, David Dong, Andy Cheng, Tran Doan, Emma Adams, Marynel Vazquez, Brian Scassellati"
+    venue: "RO-MAN"
+    journal: "IEEE RO-MAN 2024, Pasadena, California"
+    year: 2024
+    sortOrder: 7
+    abstract: "To enable sophisticated interactions between humans and robots in a shared environment, robots must infer the intentions and strategies of their human counterparts. This inference can provide a competitive edge to the robot or enhance human-robot collaboration by reducing the necessity for explicit communication about task decisions. In this work, we identify specific states within the shared environment, which we refer to as Critical Decision Points, where the actions of a human would be especially indicative of their high-level strategy. A robot can significantly reduce uncertainty regarding the human's strategy by observing actions at these points. To demonstrate the practical value of Critical Decision Points, we propose a Receding Horizon Planning (RHP) approach for the robot to influence the movement of a human opponent in a competitive game of hide-and-seek in a partially observable setting. The human plays as the hider and the robot plays as the seeker. We show that the seeker can influence the hider to move towards Critical Decision Points, and this can facilitate a more accurate estimation of the hider's strategy. In turn, this helps the seeker catch the hider faster than estimating the hider's strategy whenever the hider is visible or when the seeker only optimizes for minimizing its distance to the hider."
+    citation: |
+      @inproceedings{planningwithcriticaldecisionpointsrobotsthatinfluencehumanstoinfertheirstrategy,
+        author = {Debasmita Ghose and Michal Lewkowicz and David Dong and Andy Cheng and Tran Doan and Emma Adams and Marynel Vazquez and Brian Scassellati},
+        title = {Planning with Critical Decision Points: Robots that Influence Humans to Infer Their Strategy},
+        booktitle = {IEEE RO-MAN 2024, Pasadena, California},
+        year = {2024},
+      }
+    links:
+      - label: paper
+        url: https://drive.google.com/file/d/1RX3bb-iqtAhuo6XdZDRYMggA75N1TVoE/view?usp=drive_link
+  - title: "Interactive Policy Shaping for Human-Robot Collaboration with Transparent Matrix Overlays"
+    authors: "Jake Brawer, Debasmita Ghose, Kate Candon, Meiying Qin, Alessandro Roncone, Marynel Vazquez, Brian Scassellati"
+    venue: "HRI"
+    journal: "HRI 2023, Stockholm, Sweden (Oral) — Best Paper Award"
+    year: 2023
+    sortOrder: 6
+    abstract: "One important aspect of effective human–robot collaborations is the ability for robots to adapt quickly to the needs of humans. While techniques like deep reinforcement learning have demonstrated success as sophisticated tools for learning robot policies, the fluency of human-robot collaborations is often limited by these policies' inability to integrate changes to a user's preferences for the task. To address these shortcomings, we propose a novel approach that can modify learned policies at execution time via symbolic if-this-then-that rules corresponding to a modular and superimposable set of low-level constraints on the robot's policy. These rules, which we call Transparent Matrix Overlays, function not only as succinct and explainable descriptions of the robot's current strategy but also as an interface by which a human collaborator can easily alter a robot's policy via verbal commands. We demonstrate the efficacy of this approach on a series of proof-of-concept cooking tasks performed in simulation and on a physical robot."
+    citation: |
+      @inproceedings{interactivepolicyshapingforhumanrobotcollaborationwithtransparentmatrixoverlays,
+        author = {Jake Brawer and Debasmita Ghose and Kate Candon and Meiying Qin and Alessandro Roncone and Marynel Vazquez and Brian Scassellati},
+        title = {Interactive Policy Shaping for Human-Robot Collaboration with Transparent Matrix Overlays},
+        booktitle = {HRI 2023, Stockholm, Sweden (Oral) — Best Paper Award},
+        year = {2023},
+      }
+    links:
+      - label: paper
+        url: https://dl.acm.org/doi/pdf/10.1145/3434073.3444647
+  - title: "Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot"
+    authors: "Debasmita Ghose, Michal Lewkowicz, Kaleb Gezahegn, Juilan Lee*, Timothy Adamson*, Marynel Vazquez, Brian Scassellati"
+    venue: "CoRL"
+    journal: "Conference on Robot Learning (CoRL 2022), Auckland, New Zealand"
+    year: 2022
+    sortOrder: 5
+    abstract: "Robots are well-suited to alleviate the burden of repetitive and tedious manipulation tasks. In many applications, though, a robot may be asked to interact with a wide variety of objects, making it hard or even impossible to pre-program visual object classifiers suitable for the task of interest. In this work, we study the problem of learning a classifier for visual objects based on a few examples provided by humans. We frame this problem from the perspective of learning a suitable visual object representation that allows us to distinguish the desired object category from others. Our proposed approach integrates human supervision into the representation learning process by combining contrastive learning with an additional loss function that brings the representations of human examples close to each other in the latent space. Our experiments show that our proposed method performs better than self-supervised and fully supervised learning methods in offline evaluations and can also be used in real-time by a robot in a simplified recycling domain, where recycling streams contain a variety of objects."
+    citation: |
+      @inproceedings{tailoringvisualobjectrepresentationstohumanrequirementsacasestudywitharecyclingrobot,
+        author = {Debasmita Ghose and Michal Lewkowicz and Kaleb Gezahegn and Juilan Lee and Timothy Adamson and Marynel Vazquez and Brian Scassellati},
+        title = {Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot},
+        booktitle = {Conference on Robot Learning (CoRL 2022), Auckland, New Zealand},
+        year = {2022},
+      }
+    links:
+      - label: project
+        url: https://sites.google.com/view/corl22-contrastive-recycling/home
+  - title: "The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes"
+    authors: "Nicole Salomons*, Tom Wallenstein*, Debasmita Ghose*, Brian Scassellati"
+    venue: "RO-MAN"
+    journal: "IEEE RO-MAN 2022, Naples, Italy (Oral)"
+    year: 2022
+    sortOrder: 4
+    abstract: "Regular exercise provides many mental and physical health benefits. However, when exercises are done incorrectly, it can lead to injuries. Because the COVID-19 pandemic made it challenging to exercise in communal spaces, the growth of virtual fitness programs was accelerated, putting people at risk of sustaining exercise-related injuries as they received little to no feedback on their exercising techniques. Co-located robots could be one potential enhancement to virtual training programs as they can cause higher learning gains, more compliance, and more enjoyment than non-co-located robots. In this study, we compare the effects of a physically present robot by having a person exercise either with a robot (robot condition) or a video of a robot displayed on a tablet (tablet condition). Participants (N=25) had an exercise system in their homes for two weeks. Participants who exercised with the co-located robot made fewer mistakes than those who exercised with the video-displayed robot. Furthermore, participants in the robot condition reported a higher fitness increase and more motivation to exercise than participants in the tablet condition."
+    citation: |
+      @inproceedings{theimpactofaninhomecolocatedroboticcoachinhelpingpeoplemakefewerexercisemistakes,
+        author = {Nicole Salomons and Tom Wallenstein and Debasmita Ghose and Brian Scassellati},
+        title = {The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes},
+        booktitle = {IEEE RO-MAN 2022, Naples, Italy (Oral)},
+        year = {2022},
+      }
+    links:
+      - label: paper
+        url: https://scazlab.yale.edu/sites/default/files/files/RO_MAN_2022%20coaching.pdf
+  - title: "Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images"
+    authors: "Shasvat Desai*, Debasmita Ghose*"
+    venue: "WACV"
+    journal: "IEEE/CVF WACV 2022, Waikoloa, HI (Oral)"
+    year: 2022
+    sortOrder: 3
+    abstract: "Remote sensing data is crucial for applications ranging from monitoring forest fires and deforestation to tracking urbanization. Most of these tasks require dense pixel-level annotations for the model to parse visual information from limited labeled data available for these satellite images. Due to the dearth of high-quality labeled training data in this domain, there is a need to focus on semi-supervised techniques. These techniques generate pseudo-labels from a small set of labeled examples which are used to augment the labeled training set. This makes it necessary to have a highly representative and diverse labeled training set. Therefore, we propose to use an active learning-based sampling strategy to select a highly representative set of labeled training data. We demonstrate our proposed method's effectiveness on two existing semantic segmentation datasets containing satellite images: UC Merced Land Use Classification Dataset and DeepGlobe Land Cover Classification Dataset. We report a 27% improvement in mIoU with as little as 2% labeled data using active learning sampling strategies over randomly sampling the small set of labeled training data."
+    citation: |
+      @inproceedings{activelearningforimprovedsemisupervisedsemanticsegmentationinsatelliteimages,
+        author = {Shasvat Desai and Debasmita Ghose},
+        title = {Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images},
+        booktitle = {IEEE/CVF WACV 2022, Waikoloa, HI (Oral)},
+        year = {2022},
+      }
+    links:
+      - label: paper
+        url: https://arxiv.org/abs/2110.07782
+      - label: project
+        url: https://sites.google.com/view/al-s4gan-semi-sup-sseg/home
+  - title: "Why We Should Build Robots that both Teach and Learn"
+    authors: "Timothy Adamson*, Debasmita Ghose*, Shannon Yasuda, Lucas Shepard, Michal Lewkowicz, Joyce Duan, Brian Scassellati"
+    venue: "HRI"
+    journal: "HRI 2021, Boulder, CO (Oral)"
+    year: 2021
+    sortOrder: 2
+    abstract: "In this paper, we argue in favor of creating robots that both teach and learn. We propose a methodology for building robots that can learn a skill from an expert, perform the skill independently or collaboratively with the expert, and then teach the same skill to a novice. This requires combining insights from learning from demonstration, human-robot collaboration, and intelligent tutoring systems to develop knowledge representations that can be shared across all three components. As a case study for our methodology, we developed a glockenspiel-playing robot. The robot begins as a novice, learns how to play musical harmonies from an expert, collaborates with the expert to complete harmonies, and then teaches the harmonies to novice users. This methodology allows for new evaluation metrics that provide a thorough understanding of how well the robot has learned and enables a robot to act as an efficient facilitator for teaching across temporal and geographic separation."
+    citation: |
+      @inproceedings{whyweshouldbuildrobotsthatbothteachandlearn,
+        author = {Timothy Adamson and Debasmita Ghose and Shannon Yasuda and Lucas Shepard and Michal Lewkowicz and Joyce Duan and Brian Scassellati},
+        title = {Why We Should Build Robots that both Teach and Learn},
+        booktitle = {HRI 2021, Boulder, CO (Oral)},
+        year = {2021},
+      }
+    links:
+      - label: paper
+        url: https://drive.google.com/file/d/1PaNi_FyYzQ2sHveb5xcp3uq0MyJc4ABM/view?usp=sharing
+  - title: "Pedestrian Detection In Thermal Images Using Saliency Maps"
+    authors: "Debasmita Ghose*, Shasvat Desai*, Sneha Bhattacharya*, Deep Chakraborty*, Madalina Fiterau, Tauhidur Rahman"
+    venue: "CVPR"
+    journal: "CVPR 2019 Workshop on Perception Beyond the Visible Spectrum (Oral - Spotlight)"
+    year: 2019
+    sortOrder: 1
+    abstract: "Thermal images are mainly used to detect the presence of people at night or in bad lighting conditions, but perform poorly at daytime. To solve this problem, most state-of-the-art techniques employ a fusion network that uses features from paired thermal and color images. Instead, we propose to augment thermal images with their saliency maps, to serve as an attention mechanism for the pedestrian detector especially during daytime. We investigate how such an approach results in improved performance for pedestrian detection using only thermal images, eliminating the need for paired color images. For our experiments, we train the Faster R-CNN for pedestrian detection and report the added effect of saliency maps generated using static and deep methods (PiCA-Net and R3-Net). Our best performing model results in an absolute reduction of miss rate by 13.4% and 19.4% over the baseline in day and night images respectively. We also annotate and release pixel level masks of pedestrians on a subset of the KAIST Multispectral Pedestrian Detection dataset, which is a first publicly available dataset for salient pedestrian detection."
+    citation: |
+      @inproceedings{pedestriandetectioninthermalimagesusingsaliencymaps,
+        author = {Debasmita Ghose and Shasvat Desai and Sneha Bhattacharya and Deep Chakraborty and Madalina Fiterau and Tauhidur Rahman},
+        title = {Pedestrian Detection In Thermal Images Using Saliency Maps},
+        booktitle = {CVPR 2019 Workshop on Perception Beyond the Visible Spectrum (Oral - Spotlight)},
+        year = {2019},
+      }
+    links:
+      - label: paper
+        url: https://openaccess.thecvf.com/content_CVPRW_2019/papers/PBVS/Ghose_Pedestrian_Detection_in_Thermal_Images_Using_Saliency_Maps_CVPRW_2019_paper.pdf
+      - label: project
+        url: https://information-fusion-lab-umass.github.io/Salient-Pedestrian-Detection/
+      - label: code
+        url: https://github.com/Information-Fusion-Lab-Umass/Multimodal_Influenza_Detection/tree/fppi_LAMR/faster-rcnn.pytorch
