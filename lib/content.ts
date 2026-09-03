@@ -58,7 +58,9 @@ export async function getResearchContent() {
         publications: matched.map((pub) => ({
           slug: pub.slug,
           title: pub.title,
+          authors: pub.authors,
           venue: pub.venue,
+          journal: pub.journal,
           year: pub.year,
           href: pub.links[0]?.url ?? `/publications#${pub.slug}`,
         })),

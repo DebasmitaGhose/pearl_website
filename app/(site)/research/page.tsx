@@ -15,7 +15,7 @@ export default async function ResearchPage() {
 
   return (
     <PageFrame title="Research" description={research.theme || undefined} wide>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid items-stretch gap-6 sm:grid-cols-2">
         {research.areas.map((area) => (
           <ResearchAreaTile key={area.slug || area.title} area={area} />
         ))}
