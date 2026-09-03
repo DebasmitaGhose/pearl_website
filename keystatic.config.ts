@@ -262,6 +262,9 @@ export default config({
         email: fields.text({ label: "Email" }),
         website: fields.url({ label: "Website" }),
         scholarUrl: fields.url({ label: "Google Scholar URL" }),
+        linkedinUrl: fields.url({ label: "LinkedIn URL" }),
+        twitterUrl: fields.url({ label: "X / Twitter URL" }),
+        githubUrl: fields.url({ label: "GitHub URL" }),
         bio: fields.text({ label: "Bio (not shown on site)", multiline: true }),
         order: fields.integer({ label: "Sort Order", defaultValue: 0 }),
         active: fields.checkbox({

@@ -7,15 +7,20 @@ publications:
     sortOrder: 17
     abstract: "We propose a unified strategy for fast goal inference in human–robot interaction. The core idea is to drive the human toward Critical Decision Points (CDPs)—states where competing human strategies prescribe different next actions and thus maximally reveal the goal. We formalise CDPs using a goal‑conditioned policy divergence measure and incorporate them into a Receding‑Horizon Planner that explores future action sequences while optimizing a cost function balancing task progress and information gain. We evaluate this approach in both a collaborative, fully observable cooking task and a competitive, partially observable hide‑and‑seek game, each in simulation and on real robots. In both scenarios, our method infers human goals more accurately and earlier than baseline strategies."
     citation: |
-      @article{robotsinfluencinghumanstorevealtheirgoalsduringcollaborationandcompetition,
+      @article{ghose2026robots,
         author = {Debasmita Ghose and Oz Gitelson and Michal Lewkowicz and Jake Brawer and Alessandro Roncone and Marynel Vazquez and Brian Scassellati},
         title = {Robots Influencing Humans to Reveal their Goals during Collaboration and Competition},
         journal = {Autonomous Robots},
+        volume = {50},
+        number = {3},
+        pages = {38},
         year = {2026},
+        doi = {10.1007/s10514-026-10267-2},
+        url = {https://doi.org/10.1007/s10514-026-10267-2},
       }
     links:
       - label: paper
-        url: https://scazlab.yale.edu/sites/default/files/files/RA_L___Adaptive_CDP%20(9).pdf
+        url: https://trebuchet.public.springernature.app/get_content/b6aa351c-e243-4240-bcc7-59d6bc47ebec?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=nonoa_20260903&utm_content=10.1007/s10514-026-10267-2
   - title: "On-the-Job Robot Adaptation to Human Goals"
     authors: "Debasmita Ghose"
     venue: "RSS Pioneers"
