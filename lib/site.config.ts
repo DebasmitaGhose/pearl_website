@@ -40,10 +40,15 @@ export const defaultSiteSettings = {
   tagline: "Making robots ordinary in people's everyday lives.",
   researchSummary:
     "PEARL studies how generalist robots can understand, model, and adapt to human behavior in natural environments—toward robots people are willing to live and work with.",
-  contactEmail: "debasmita.ghose@uic.edu",
+  contactEmail: "debasmita.ghose@yale.edu",
+  contactEmailNote: "Will change after transition to UIC is complete.",
   address:
     "Department of Computer Science, University of Illinois Chicago, Chicago, IL",
   footerText: "PEARL — University of Illinois Chicago",
   githubUrl: "",
   twitterUrl: "",
 };
+
+/** Current public contact address (Yale until UIC transition completes). */
+export const LAB_CONTACT_EMAIL = defaultSiteSettings.contactEmail;
+export const LAB_CONTACT_EMAIL_NOTE = defaultSiteSettings.contactEmailNote;

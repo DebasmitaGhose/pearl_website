@@ -106,6 +106,9 @@ export default config({
           multiline: true,
         }),
         contactEmail: fields.text({ label: "Contact Email" }),
+        contactEmailNote: fields.text({
+          label: "Contact email note (shown with an asterisk)",
+        }),
         address: fields.text({ label: "Address", multiline: true }),
         footerText: fields.text({ label: "Footer Text", multiline: true }),
         githubUrl: fields.url({ label: "GitHub URL" }),

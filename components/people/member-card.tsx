@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Globe, GraduationCap, Mail } from "lucide-react";
+import { ContactEmail } from "@/components/ui/contact-email";
 import { joinHrefForMemberRole } from "@/lib/join-opportunities";
 import { roleLabels, memberRoleOrder } from "@/lib/site.config";
 
@@ -111,6 +112,11 @@ function PICard({ member }: { member: MemberEntry }) {
         <p className="mt-1 text-sm text-muted-foreground sm:text-base">
           PI and Lab Director, PEople Aligned Robots Lab (PEARL)
         </p>
+        {member.email && (
+          <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+            <ContactEmail email={member.email} />
+          </p>
+        )}
 
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 sm:justify-start">
           {member.email && (

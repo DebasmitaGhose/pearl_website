@@ -1,3 +1,8 @@
+import {
+  LAB_CONTACT_EMAIL,
+  LAB_CONTACT_EMAIL_NOTE,
+} from "@/lib/site.config";
+
 export type JoinInlinePart =
   | string
   | { type: "link"; href: string; label: string; bold?: boolean }
@@ -38,7 +43,8 @@ export const PHD_GOOGLE_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSebvU1ln4i35W7QBEce6m7GIixGBuQA4DYGQBjtG8tLPsYQqg/viewform?usp=publish-editor";
 
 /** Replace with the UIC undergrad/master's interest form URL when ready. */
-export const UIC_STUDENT_INTEREST_FORM_URL = "YOUR_UIC_STUDENT_INTEREST_FORM_URL_HERE";
+export const UIC_STUDENT_INTEREST_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfaj8Ob8JwIlf-pMvOCtzTxMQIl9kC81VJmraRc1Q1I_-oFMw/viewform?usp=publish-editor";
 
 export const UIC_CS_PHD_APPLY_URL =
   "https://cs.uic.edu/graduate/admissions/phd/";
@@ -267,7 +273,13 @@ export const joinOpportunities: JoinOpportunity[] = [
         callout: "We are not currently actively recruiting postdoctoral researchers.",
         paragraphs: [
           [
-            "However, if you see a strong alignment between your research interests and the work at PEARL, you are welcome to reach out to Debasmita. Please use the subject line ",
+            "However, if you see a strong alignment between your research interests and the work at PEARL, you are welcome to reach out to Debasmita at ",
+            {
+              type: "link",
+              href: `mailto:${LAB_CONTACT_EMAIL}`,
+              label: LAB_CONTACT_EMAIL,
+            },
+            `*. Please use the subject line `,
             {
               type: "bold",
               text: "[POTENTIAL POSTDOC]",
@@ -284,6 +296,7 @@ export const joinOpportunities: JoinOpportunity[] = [
             },
             " describing your research interests, why PEARL would be a good fit, and what you hope to accomplish during a postdoc.",
           ],
+          [`*${LAB_CONTACT_EMAIL_NOTE}`],
           [
             "At present, we do not have dedicated funding for postdoctoral positions, so candidates with external fellowship or other postdoctoral funding are especially encouraged to get in touch. Funding availability may change in the future, so please check this page for updates and potential openings.",
           ],
@@ -303,7 +316,13 @@ export const joinOpportunities: JoinOpportunity[] = [
             "Due to the volume of inquiries, we may not be able to respond to emails about these opportunities.",
           ],
           [
-            "Graduate students at other institutions who are interested in visiting PEARL for a research collaboration are welcome to reach out. Please use the subject line ",
+            "Graduate students at other institutions who are interested in visiting PEARL for a research collaboration are welcome to reach out to Debasmita at ",
+            {
+              type: "link",
+              href: `mailto:${LAB_CONTACT_EMAIL}`,
+              label: LAB_CONTACT_EMAIL,
+            },
+            `*. Please use the subject line `,
             {
               type: "bold",
               text: "[POTENTIAL VISITOR]",
@@ -325,6 +344,7 @@ export const joinOpportunities: JoinOpportunity[] = [
             },
             ".",
           ],
+          [`*${LAB_CONTACT_EMAIL_NOTE}`],
           [
             "At this time, PEARL is not able to provide funding for visiting graduate students, so visitors would need to have their own source of financial support.",
           ],

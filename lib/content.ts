@@ -16,6 +16,8 @@ export async function getSiteSettings() {
     researchSummary:
       site?.researchSummary ?? defaultSiteSettings.researchSummary,
     contactEmail: site?.contactEmail ?? defaultSiteSettings.contactEmail,
+    contactEmailNote:
+      site?.contactEmailNote ?? defaultSiteSettings.contactEmailNote,
     address: site?.address ?? defaultSiteSettings.address,
     footerText: site?.footerText ?? defaultSiteSettings.footerText,
     githubUrl: site?.githubUrl ?? defaultSiteSettings.githubUrl,
