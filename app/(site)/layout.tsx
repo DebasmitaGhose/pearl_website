@@ -12,12 +12,7 @@ export default async function SiteLayout({
   return (
     <SiteChrome labSubtitle={site.labSubtitle}>
       <main>{children}</main>
-      <Footer
-        labSubtitle={site.labSubtitle}
-        contactEmail={site.contactEmail}
-        address={site.address}
-        footerText={site.footerText}
-      />
+      <Footer />
     </SiteChrome>
   );
 }

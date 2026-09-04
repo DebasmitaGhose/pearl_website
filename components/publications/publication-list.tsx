@@ -34,7 +34,7 @@ export function PublicationList({ publications }: { publications: PublicationEnt
     <div className="space-y-10">
       {years.map((year) => (
         <section key={year}>
-          <h2 className="mb-4 inline-block rounded-full bg-primary px-4 py-1 text-sm font-semibold text-primary-foreground shadow-sm">
+          <h2 className="mb-4 text-right text-2xl font-semibold tracking-tight text-primary sm:text-3xl">
             {year}
           </h2>
           <ul className="grid gap-4">

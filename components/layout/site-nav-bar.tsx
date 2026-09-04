@@ -30,7 +30,7 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "rounded-md px-3 py-2 text-[0.95rem] font-semibold tracking-wide transition-colors sm:px-3.5 sm:text-lg",
+        "rounded-md px-2 py-1 text-sm font-semibold tracking-wide transition-colors sm:px-2.5 sm:text-[0.95rem]",
         onDark
           ? active
             ? "bg-primary-foreground text-primary shadow-sm"
@@ -45,12 +45,21 @@ function NavLink({
   );
 }
 
-export function SiteNavBar({ variant = "default" }: { variant?: "default" | "onDark" }) {
+export function SiteNavBar({
+  variant = "default",
+  className,
+}: {
+  variant?: "default" | "onDark";
+  className?: string;
+}) {
   const onDark = variant === "onDark";
 
   return (
     <nav
-      className="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2"
+      className={cn(
+        "flex flex-nowrap items-center justify-end gap-0.5 sm:gap-1",
+        className
+      )}
       aria-label="Main navigation"
     >
       {visibleNavigation.map((item) => (
