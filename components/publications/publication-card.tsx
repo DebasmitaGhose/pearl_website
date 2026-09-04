@@ -14,21 +14,22 @@ function VenueTag({ label }: { label: string }) {
   );
 }
 
-function PublicationFullVenue({ pub }: { pub: PublicationEntry }) {
-  const { venueText, awardLabel } = splitPublicationVenueAndAward(pub);
+function AwardBadge({ label }: { label: string }) {
+  return (
+    <span className="inline-flex w-fit items-center gap-1 rounded-md border border-pearl-award-border bg-pearl-award-bg px-2 py-0.5 text-xs font-semibold tracking-wide text-pearl-accent">
+      <Award className="size-3.5 shrink-0" strokeWidth={2.25} aria-hidden />
+      <span>{label}</span>
+    </span>
+  );
+}
 
-  if (!venueText && !awardLabel) return null;
+function PublicationFullVenue({ pub }: { pub: PublicationEntry }) {
+  const { venueText } = splitPublicationVenueAndAward(pub);
+
+  if (!venueText) return null;
 
   return (
-    <p className="text-sm leading-relaxed text-muted-foreground">
-      {venueText}
-      {awardLabel ? (
-        <span className="ml-1.5 inline-flex items-center gap-1 font-medium text-pearl-accent">
-          <Award className="size-3.5 shrink-0" aria-hidden />
-          <span>{awardLabel}</span>
-        </span>
-      ) : null}
-    </p>
+    <p className="text-sm leading-relaxed text-muted-foreground">{venueText}</p>
   );
 }
 
@@ -47,11 +48,17 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
   const hasAbstract = Boolean(pub.abstract?.trim());
   const bibtex = resolveBibtex(pub);
   const hasEqualContribution = pub.authors.includes("*");
+  const { awardLabel } = splitPublicationVenueAndAward(pub);
 
   return (
     <article className="rounded-xl border border-border bg-card p-4 shadow-sm sm:p-5">
       <div className="space-y-2">
-        {pub.venue ? <VenueTag label={pub.venue} /> : null}
+        {pub.venue || awardLabel ? (
+          <div className="flex flex-wrap items-center gap-1.5">
+            {pub.venue ? <VenueTag label={pub.venue} /> : null}
+            {awardLabel ? <AwardBadge label={awardLabel} /> : null}
+          </div>
+        ) : null}
         <h3 className="text-base font-semibold leading-snug text-foreground">
           {pub.title}
         </h3>

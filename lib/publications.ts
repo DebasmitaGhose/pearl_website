@@ -60,7 +60,7 @@ export function formatPublicationVenue(entry: {
 }
 
 const PUBLICATION_AWARD_PATTERN =
-  /\s*[—–-]\s*((?:Best (?:Paper|Demo) Award)|(?:Best \w+(?:\s+\w+)* Award))\s*$/i;
+  /\s*[—–-]\s*((?:Best (?:Paper|Poster|Demo) Award)|(?:Best \w+(?:\s+\w+)* Award))\s*$/i;
 
 export function splitPublicationVenueAndAward(entry: {
   venue: string;

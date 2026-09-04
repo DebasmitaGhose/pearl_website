@@ -70,7 +70,13 @@ export async function getResearchContent() {
           venue: pub.venue,
           journal: pub.journal,
           year: pub.year,
-          href: pub.links[0]?.url ?? `/publications#${pub.slug}`,
+          href:
+            pub.links.find((link) => {
+              const label = link.label.toLowerCase();
+              return label === "paper" || label === "pdf";
+            })?.url ??
+            pub.links[0]?.url ??
+            `/publications#${pub.slug}`,
         })),
       };
     }) ?? [];

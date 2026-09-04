@@ -55,11 +55,11 @@ publications:
       }
     links:
       - label: paper
-        url: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1772079/abstract
+        url: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1772079/pdf
   - title: "Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration"
     authors: "Debasmita Ghose, Oz Gitelson, Marynel Vazquez, Brian Scassellati"
     venue: "HRI"
-    journal: "ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), Edinburgh, Scotland (Oral)"
+    journal: "ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), Edinburgh, Scotland"
     year: 2026
     sortOrder: 14
     abstract: "To collaborate with humans, robots must infer goals that are often ambiguous, difficult to articulate, or not drawn from a fixed set. Prior approaches restrict inference to a predefined goal set, rely only on observed actions, or depend exclusively on explicit instructions, making them brittle in real-world interactions. We present BALI (Bidirectional Action–Language Inference) for goal prediction, a method that integrates natural language preferences with observed human actions in a receding-horizon planning tree. BALI combines language and action cues from the human, asks clarifying questions only when the expected information gain from the answer outweighs the cost of interruption, and selects supportive actions that align with inferred goals. We evaluate the approach in collaborative cooking tasks, where goals may be novel to the robot and unbounded. Compared to baselines, BALI yields more stable goal predictions and significantly fewer mistakes."
@@ -67,7 +67,7 @@ publications:
       @inproceedings{openendedgoalinferencethroughactionsandlanguageforhumanrobotcollaboration,
         author = {Debasmita Ghose and Oz Gitelson and Marynel Vazquez and Brian Scassellati},
         title = {Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration},
-        booktitle = {ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), Edinburgh, Scotland (Oral)},
+        booktitle = {ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), Edinburgh, Scotland},
         year = {2026},
       }
     links:
@@ -89,7 +89,7 @@ publications:
       }
     links:
       - label: paper
-        url: https://drive.google.com/file/d/1AqXdJhaLXQVho50AsVMS9qyitYT7pauA/view?usp=sharing
+        url: https://scazlab.yale.edu/sites/default/files/files/ReplicableAutonomousSystemOmmie.pdf
       - label: video
         url: https://drive.google.com/file/d/1k--UVi2cg_V5o7Ri_AWBeNTlnFzC-Krc/view?usp=sharing
   - title: "I've Changed My Mind: Robots Adapting to Changing Human Goals during Collaboration"
@@ -141,6 +141,8 @@ publications:
         year = {2025},
       }
     links:
+      - label: paper
+        url: https://drive.google.com/file/d/1AqXdJhaLXQVho50AsVMS9qyitYT7pauA/view?usp=sharing
       - label: video
         url: https://www.linkedin.com/posts/human-robot-interaction-pioneers_hripioneers2025-activity-7296208123474673665-3ROi
   - title: "A Survey on Data Curation for Visual Contrastive Learning: Why Crafting Effective Positive and Negative Pairs Matters"
@@ -193,11 +195,11 @@ publications:
       }
     links:
       - label: paper
-        url: https://drive.google.com/file/d/1RX3bb-iqtAhuo6XdZDRYMggA75N1TVoE/view?usp=drive_link
+        url: https://scazlab.yale.edu/sites/default/files/files/RO_MAN_2024___Hide_and_Seek%20(10).pdf
   - title: "Interactive Policy Shaping for Human-Robot Collaboration with Transparent Matrix Overlays"
     authors: "Jake Brawer, Debasmita Ghose, Kate Candon, Meiying Qin, Alessandro Roncone, Marynel Vazquez, Brian Scassellati"
     venue: "HRI"
-    journal: "HRI 2023, Stockholm, Sweden (Oral) — Best Paper Award"
+    journal: "HRI 2023, Stockholm, Sweden — Best Paper Award"
     year: 2023
     sortOrder: 6
     abstract: "One important aspect of effective human–robot collaborations is the ability for robots to adapt quickly to the needs of humans. While techniques like deep reinforcement learning have demonstrated success as sophisticated tools for learning robot policies, the fluency of human-robot collaborations is often limited by these policies' inability to integrate changes to a user's preferences for the task. To address these shortcomings, we propose a novel approach that can modify learned policies at execution time via symbolic if-this-then-that rules corresponding to a modular and superimposable set of low-level constraints on the robot's policy. These rules, which we call Transparent Matrix Overlays, function not only as succinct and explainable descriptions of the robot's current strategy but also as an interface by which a human collaborator can easily alter a robot's policy via verbal commands. We demonstrate the efficacy of this approach on a series of proof-of-concept cooking tasks performed in simulation and on a physical robot."
@@ -205,12 +207,12 @@ publications:
       @inproceedings{interactivepolicyshapingforhumanrobotcollaborationwithtransparentmatrixoverlays,
         author = {Jake Brawer and Debasmita Ghose and Kate Candon and Meiying Qin and Alessandro Roncone and Marynel Vazquez and Brian Scassellati},
         title = {Interactive Policy Shaping for Human-Robot Collaboration with Transparent Matrix Overlays},
-        booktitle = {HRI 2023, Stockholm, Sweden (Oral) — Best Paper Award},
+        booktitle = {HRI 2023, Stockholm, Sweden — Best Paper Award},
         year = {2023},
       }
     links:
       - label: paper
-        url: https://dl.acm.org/doi/pdf/10.1145/3434073.3444647
+        url: https://scazlab.yale.edu/sites/default/files/files/HRI_2023___Chefbot.pdf
   - title: "Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot"
     authors: "Debasmita Ghose, Michal Lewkowicz, Kaleb Gezahegn, Juilan Lee*, Timothy Adamson*, Marynel Vazquez, Brian Scassellati"
     venue: "CoRL"
@@ -226,12 +228,14 @@ publications:
         year = {2022},
       }
     links:
+      - label: paper
+        url: https://scazlab.yale.edu/sites/default/files/files/CoRL_2022___Recycling_Paper.pdf
       - label: project
         url: https://sites.google.com/view/corl22-contrastive-recycling/home
   - title: "The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes"
     authors: "Nicole Salomons*, Tom Wallenstein*, Debasmita Ghose*, Brian Scassellati"
     venue: "RO-MAN"
-    journal: "IEEE RO-MAN 2022, Naples, Italy (Oral)"
+    journal: "IEEE RO-MAN 2022, Naples, Italy"
     year: 2022
     sortOrder: 4
     abstract: "Regular exercise provides many mental and physical health benefits. However, when exercises are done incorrectly, it can lead to injuries. Because the COVID-19 pandemic made it challenging to exercise in communal spaces, the growth of virtual fitness programs was accelerated, putting people at risk of sustaining exercise-related injuries as they received little to no feedback on their exercising techniques. Co-located robots could be one potential enhancement to virtual training programs as they can cause higher learning gains, more compliance, and more enjoyment than non-co-located robots. In this study, we compare the effects of a physically present robot by having a person exercise either with a robot (robot condition) or a video of a robot displayed on a tablet (tablet condition). Participants (N=25) had an exercise system in their homes for two weeks. Participants who exercised with the co-located robot made fewer mistakes than those who exercised with the video-displayed robot. Furthermore, participants in the robot condition reported a higher fitness increase and more motivation to exercise than participants in the tablet condition."
@@ -239,7 +243,7 @@ publications:
       @inproceedings{theimpactofaninhomecolocatedroboticcoachinhelpingpeoplemakefewerexercisemistakes,
         author = {Nicole Salomons and Tom Wallenstein and Debasmita Ghose and Brian Scassellati},
         title = {The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes},
-        booktitle = {IEEE RO-MAN 2022, Naples, Italy (Oral)},
+        booktitle = {IEEE RO-MAN 2022, Naples, Italy},
         year = {2022},
       }
     links:
@@ -248,7 +252,7 @@ publications:
   - title: "Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images"
     authors: "Shasvat Desai*, Debasmita Ghose*"
     venue: "WACV"
-    journal: "IEEE/CVF WACV 2022, Waikoloa, HI (Oral)"
+    journal: "IEEE/CVF WACV 2022, Waikoloa, HI"
     year: 2022
     sortOrder: 3
     abstract: "Remote sensing data is crucial for applications ranging from monitoring forest fires and deforestation to tracking urbanization. Most of these tasks require dense pixel-level annotations for the model to parse visual information from limited labeled data available for these satellite images. Due to the dearth of high-quality labeled training data in this domain, there is a need to focus on semi-supervised techniques. These techniques generate pseudo-labels from a small set of labeled examples which are used to augment the labeled training set. This makes it necessary to have a highly representative and diverse labeled training set. Therefore, we propose to use an active learning-based sampling strategy to select a highly representative set of labeled training data. We demonstrate our proposed method's effectiveness on two existing semantic segmentation datasets containing satellite images: UC Merced Land Use Classification Dataset and DeepGlobe Land Cover Classification Dataset. We report a 27% improvement in mIoU with as little as 2% labeled data using active learning sampling strategies over randomly sampling the small set of labeled training data."
@@ -256,7 +260,7 @@ publications:
       @inproceedings{activelearningforimprovedsemisupervisedsemanticsegmentationinsatelliteimages,
         author = {Shasvat Desai and Debasmita Ghose},
         title = {Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images},
-        booktitle = {IEEE/CVF WACV 2022, Waikoloa, HI (Oral)},
+        booktitle = {IEEE/CVF WACV 2022, Waikoloa, HI},
         year = {2022},
       }
     links:
@@ -267,7 +271,7 @@ publications:
   - title: "Why We Should Build Robots that both Teach and Learn"
     authors: "Timothy Adamson*, Debasmita Ghose*, Shannon Yasuda, Lucas Shepard, Michal Lewkowicz, Joyce Duan, Brian Scassellati"
     venue: "HRI"
-    journal: "HRI 2021, Boulder, CO (Oral)"
+    journal: "HRI 2021, Boulder, CO"
     year: 2021
     sortOrder: 2
     abstract: "In this paper, we argue in favor of creating robots that both teach and learn. We propose a methodology for building robots that can learn a skill from an expert, perform the skill independently or collaboratively with the expert, and then teach the same skill to a novice. This requires combining insights from learning from demonstration, human-robot collaboration, and intelligent tutoring systems to develop knowledge representations that can be shared across all three components. As a case study for our methodology, we developed a glockenspiel-playing robot. The robot begins as a novice, learns how to play musical harmonies from an expert, collaborates with the expert to complete harmonies, and then teaches the harmonies to novice users. This methodology allows for new evaluation metrics that provide a thorough understanding of how well the robot has learned and enables a robot to act as an efficient facilitator for teaching across temporal and geographic separation."
@@ -275,16 +279,16 @@ publications:
       @inproceedings{whyweshouldbuildrobotsthatbothteachandlearn,
         author = {Timothy Adamson and Debasmita Ghose and Shannon Yasuda and Lucas Shepard and Michal Lewkowicz and Joyce Duan and Brian Scassellati},
         title = {Why We Should Build Robots that both Teach and Learn},
-        booktitle = {HRI 2021, Boulder, CO (Oral)},
+        booktitle = {HRI 2021, Boulder, CO},
         year = {2021},
       }
     links:
       - label: paper
-        url: https://drive.google.com/file/d/1PaNi_FyYzQ2sHveb5xcp3uq0MyJc4ABM/view?usp=sharing
+        url: https://scazlab.yale.edu/sites/default/files/files/hrifp1028-adamsonA.pdf
   - title: "Pedestrian Detection In Thermal Images Using Saliency Maps"
     authors: "Debasmita Ghose*, Shasvat Desai*, Sneha Bhattacharya*, Deep Chakraborty*, Madalina Fiterau, Tauhidur Rahman"
     venue: "CVPR"
-    journal: "CVPR 2019 Workshop on Perception Beyond the Visible Spectrum (Oral - Spotlight)"
+    journal: "CVPR 2019 Workshop on Perception Beyond the Visible Spectrum"
     year: 2019
     sortOrder: 1
     abstract: "Thermal images are mainly used to detect the presence of people at night or in bad lighting conditions, but perform poorly at daytime. To solve this problem, most state-of-the-art techniques employ a fusion network that uses features from paired thermal and color images. Instead, we propose to augment thermal images with their saliency maps, to serve as an attention mechanism for the pedestrian detector especially during daytime. We investigate how such an approach results in improved performance for pedestrian detection using only thermal images, eliminating the need for paired color images. For our experiments, we train the Faster R-CNN for pedestrian detection and report the added effect of saliency maps generated using static and deep methods (PiCA-Net and R3-Net). Our best performing model results in an absolute reduction of miss rate by 13.4% and 19.4% over the baseline in day and night images respectively. We also annotate and release pixel level masks of pedestrians on a subset of the KAIST Multispectral Pedestrian Detection dataset, which is a first publicly available dataset for salient pedestrian detection."
@@ -292,7 +296,7 @@ publications:
       @inproceedings{pedestriandetectioninthermalimagesusingsaliencymaps,
         author = {Debasmita Ghose and Shasvat Desai and Sneha Bhattacharya and Deep Chakraborty and Madalina Fiterau and Tauhidur Rahman},
         title = {Pedestrian Detection In Thermal Images Using Saliency Maps},
-        booktitle = {CVPR 2019 Workshop on Perception Beyond the Visible Spectrum (Oral - Spotlight)},
+        booktitle = {CVPR 2019 Workshop on Perception Beyond the Visible Spectrum},
         year = {2019},
       }
     links:

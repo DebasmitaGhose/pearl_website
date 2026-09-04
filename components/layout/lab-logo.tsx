@@ -41,8 +41,8 @@ export function LabLogo({
           <p
             className={
               large
-                ? "font-display text-lg font-semibold tracking-[0.04em] text-primary-foreground group-hover:text-secondary sm:text-xl"
-                : "font-display text-sm font-semibold tracking-[0.04em] text-primary-foreground group-hover:text-secondary"
+                ? "font-display text-[1.72rem] font-semibold leading-none tracking-normal text-primary-foreground group-hover:text-secondary sm:text-[1.88rem]"
+                : "font-display text-[1.2rem] font-semibold leading-none tracking-normal text-primary-foreground group-hover:text-secondary"
             }
             suppressHydrationWarning
           >
@@ -57,8 +57,8 @@ export function LabLogo({
               <p
                 className={
                   large
-                    ? "font-display text-[0.8rem] font-medium tracking-wide text-primary-foreground/90 sm:text-[0.85rem]"
-                    : "font-display text-xs font-medium tracking-wide text-primary-foreground/90"
+                    ? "font-display text-[0.8rem] font-medium leading-tight tracking-normal text-primary-foreground/90 sm:text-[0.85rem]"
+                    : "font-display text-xs font-medium leading-tight tracking-normal text-primary-foreground/90"
                 }
               >
                 PEople Aligned
@@ -66,8 +66,8 @@ export function LabLogo({
               <p
                 className={
                   large
-                    ? "font-display text-[0.8rem] font-medium tracking-wide text-primary-foreground/90 sm:text-[0.85rem]"
-                    : "font-display text-xs font-medium tracking-wide text-primary-foreground/90"
+                    ? "font-display text-[0.8rem] font-medium leading-tight tracking-normal text-primary-foreground/90 sm:text-[0.85rem]"
+                    : "font-display text-xs font-medium leading-tight tracking-normal text-primary-foreground/90"
                 }
               >
                 Robots Lab

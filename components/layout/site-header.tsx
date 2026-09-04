@@ -28,7 +28,7 @@ export function SiteHeader({ labSubtitle }: SiteHeaderProps) {
                 width={280}
                 height={78}
                 unoptimized
-                className="h-8 w-auto object-contain sm:h-10"
+                className="h-12 w-auto object-contain sm:h-14"
                 priority
               />
             </Link>

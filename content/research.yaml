@@ -1,9 +1,10 @@
 theme: >-
-  We study how robots can infer, anticipate, and adapt to human goals during
-  real-world collaboration—not just execute fixed scripts. Our work sits at the
-  intersection of human-robot interaction, robot learning, and socially assistive
-  systems. We build algorithms and deployable platforms, then validate them with
-  human participants in lab studies and in-the-wild deployments.
+  Our long-term vision is to make robots ordinary in people's everyday
+  lives—partners that notice what someone is trying to do, adapt as goals
+  change, and help without constant instruction. At PEARL, that vision shapes
+  how we study robots that infer people's goals, adapt from high-level natural
+  language, learn from human guidance, and hold up in real homes and other
+  in-the-wild settings. The areas below are the threads that organize this work.
 areas:
   - title: Robots inferring people's goals
     slug: goal-inference
@@ -44,19 +45,21 @@ areas:
       including mental health applications and robot-led activities for people living
       with dementia and their care partners.
     publicationTitles:
-      - "Exploring Robot-Led Activities between People Living with Dementia and Family Care Partners"
-      - "A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot"
-      - "Integrating Multimodal Affective Signals for Stress Detection from Audio-Visual Data"
-      - "The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes"
+      - "Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot"
+      - "Why We Should Build Robots that both Teach and Learn"
   - title: In-the-wild robot deployments with people
     slug: perception
     description: >-
-      We study how robots should represent the visual world when humans are the
-      ultimate judge of success—from recycling robots to satellite image
-      segmentation—with active learning and human-tailored representations.
+      Many challenges for robots that work with people only show up outside the
+      lab—over days and weeks, in people’s homes, under everyday use. We study
+      in-the-wild deployments where robots support people over extended periods:
+      a two-week in-home exercise coaching study with pre-scripted robot
+      behaviors, robot-facilitated activities between people living with dementia
+      and their care partners, and a multi-week guided breathing intervention for
+      adolescents with anxiety. These deployments shape how we approach long-term
+      adaptation in embodied systems.
+    image: /images/pages/research/in-the-wild-deployments-collage-v3.jpg
     publicationTitles:
-      - "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models"
-      - "A Survey on Data Curation for Visual Contrastive Learning: Why Crafting Effective Positive and Negative Pairs Matters"
-      - "Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot"
-      - "Active Learning for Improved Semi-Supervised Semantic Segmentation in Satellite Images"
-      - "Pedestrian Detection In Thermal Images Using Saliency Maps"
+      - "Exploring Robot-Led Activities between People Living with Dementia and Family Care Partners"
+      - "A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot"
+      - "The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes"

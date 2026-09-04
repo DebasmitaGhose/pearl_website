@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { formatPublicationVenue } from "@/lib/publications";
+import { Award } from "lucide-react";
+import { splitPublicationVenueAndAward } from "@/lib/publications";
 
 const PREVIEW_COUNT = 3;
 
@@ -23,7 +24,7 @@ export type ResearchArea = {
 };
 
 function PublicationCitation({ pub }: { pub: ResearchAreaPublication }) {
-  const venue = formatPublicationVenue(pub);
+  const { venueText, awardLabel } = splitPublicationVenueAndAward(pub);
   const external = pub.href.startsWith("http");
 
   return (
@@ -36,7 +37,13 @@ function PublicationCitation({ pub }: { pub: ResearchAreaPublication }) {
       >
         “{pub.title}.”
       </Link>
-      {venue ? <span> {venue}.</span> : null}
+      {venueText ? <span> {venueText}.</span> : null}
+      {awardLabel ? (
+        <span className="ml-1.5 inline-flex items-center gap-0.5 rounded border border-pearl-award-border bg-pearl-award-bg px-1.5 py-px text-[0.65rem] font-semibold tracking-wide text-pearl-accent">
+          <Award className="size-2.5 shrink-0" strokeWidth={2.25} aria-hidden />
+          {awardLabel}
+        </span>
+      ) : null}
     </li>
   );
 }
@@ -55,7 +62,7 @@ export function ResearchAreaTile({ area }: { area: ResearchArea }) {
             src={area.image}
             alt=""
             fill
-            className="object-contain"
+              className="object-contain"
             sizes="(max-width: 768px) 100vw, 448px"
           />
         ) : (

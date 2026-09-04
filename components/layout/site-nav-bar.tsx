@@ -30,7 +30,7 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "rounded-md px-2 py-1 text-sm font-semibold tracking-wide transition-colors sm:px-2.5 sm:text-[0.95rem]",
+        "rounded-md px-2 py-1 text-base font-semibold tracking-wide transition-colors sm:px-2.5 sm:text-[1.05rem]",
         onDark
           ? active
             ? "bg-primary-foreground text-primary shadow-sm"
