@@ -31,13 +31,13 @@ export function PublicationList({ publications }: { publications: PublicationEnt
   const years = Array.from(byYear.keys()).sort((a, b) => b - a);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-7">
       {years.map((year) => (
         <section key={year}>
-          <h2 className="mb-4 text-right text-2xl font-semibold tracking-tight text-primary sm:text-3xl">
+          <h2 className="mb-2.5 text-right font-display text-2xl font-semibold tracking-tight text-primary/80 sm:text-3xl">
             {year}
           </h2>
-          <ul className="grid gap-4">
+          <ul className="grid gap-3">
             {byYear.get(year)?.map((pub) => (
               <li key={pub.slug}>
                 <PublicationCard pub={pub} />

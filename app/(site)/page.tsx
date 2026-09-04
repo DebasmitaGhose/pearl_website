@@ -10,14 +10,14 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      <section className="mt-5 flex items-center justify-between gap-3 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-4 py-3.5 sm:gap-6 sm:px-7 sm:py-5">
-        <p className="min-w-0 text-sm font-semibold leading-snug text-primary sm:text-lg">
+      <section className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-3 py-2 sm:gap-4 sm:px-4 sm:py-2.5">
+        <p className="min-w-0 text-sm font-semibold leading-snug text-primary sm:text-base">
           We are hiring Ph.D., master&apos;s, and undergraduate students.
         </p>
         <ButtonLink
           href="/join"
-          size="lg"
-          className="shrink-0 px-3 text-xs sm:px-4 sm:text-sm"
+          size="sm"
+          className="shrink-0"
         >
           Join the lab
         </ButtonLink>

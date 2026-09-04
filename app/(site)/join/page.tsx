@@ -4,10 +4,9 @@ import { Suspense } from "react";
 import { JoinOpportunityCards } from "@/components/join/join-opportunity-cards";
 import { JoinResearchOverview } from "@/components/join/join-research-overview";
 import { PageFrame } from "@/components/layout/page-frame";
-import { getJoinContent, getSiteSettings } from "@/lib/content";
+import { getJoinContent } from "@/lib/content";
 
 export default async function JoinPage() {
-  const site = await getSiteSettings();
   const join = await getJoinContent();
 
   return (
@@ -46,18 +45,6 @@ export default async function JoinPage() {
       <Suspense fallback={null}>
         <JoinOpportunityCards />
       </Suspense>
-
-      <div className="mt-10 border-t border-border pt-6">
-        <p className="text-base text-muted-foreground">
-          Questions?{" "}
-          <a
-            href={`mailto:${site.contactEmail}`}
-            className="font-medium text-primary transition-colors hover:underline"
-          >
-            {site.contactEmail}
-          </a>
-        </p>
-      </div>
     </PageFrame>
   );
 }

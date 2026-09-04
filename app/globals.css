@@ -201,3 +201,61 @@
     display: inline;
   }
 }
+
+/* Home carousel — unlayered so it beats Tailwind utility layers */
+.home-carousel-slide {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.home-carousel-nav {
+  display: none;
+}
+
+.home-carousel-caption {
+  display: none;
+}
+
+.home-carousel-dot {
+  width: 0.5rem;
+  background: var(--border);
+}
+
+.home-carousel:has(.home-carousel-radio[data-slide="0"]:checked) .home-carousel-slide[data-slide="0"],
+.home-carousel:has(.home-carousel-radio[data-slide="1"]:checked) .home-carousel-slide[data-slide="1"],
+.home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-slide[data-slide="2"],
+.home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-slide[data-slide="3"],
+.home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-slide[data-slide="4"],
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-slide[data-slide="5"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.home-carousel:has(.home-carousel-radio[data-slide="0"]:checked) .home-carousel-nav[data-slide="0"],
+.home-carousel:has(.home-carousel-radio[data-slide="1"]:checked) .home-carousel-nav[data-slide="1"],
+.home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-nav[data-slide="2"],
+.home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-nav[data-slide="3"],
+.home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-nav[data-slide="4"],
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-nav[data-slide="5"] {
+  display: block;
+}
+
+.home-carousel:has(.home-carousel-radio[data-slide="0"]:checked) .home-carousel-caption[data-slide="0"],
+.home-carousel:has(.home-carousel-radio[data-slide="1"]:checked) .home-carousel-caption[data-slide="1"],
+.home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-caption[data-slide="2"],
+.home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-caption[data-slide="3"],
+.home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-caption[data-slide="4"],
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-caption[data-slide="5"] {
+  display: block;
+}
+
+.home-carousel:has(.home-carousel-radio[data-slide="0"]:checked) .home-carousel-dot[data-slide="0"],
+.home-carousel:has(.home-carousel-radio[data-slide="1"]:checked) .home-carousel-dot[data-slide="1"],
+.home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-dot[data-slide="2"],
+.home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-dot[data-slide="3"],
+.home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-dot[data-slide="4"],
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-dot[data-slide="5"] {
+  width: 1.5rem;
+  background: var(--primary);
+}

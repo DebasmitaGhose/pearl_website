@@ -6,7 +6,11 @@ export default async function PublicationsPage() {
   const publications = await getPublications();
 
   return (
-    <PageFrame title="Publications" wide>
+    <PageFrame
+      title="Publications"
+      description="We publish our work in leading journals and conferences in human–robot interaction, robotics, machine learning, and human–computer interaction."
+      wide
+    >
       <PublicationList publications={publications} />
     </PageFrame>
   );

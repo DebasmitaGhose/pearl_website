@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 function VenueTag({ label }: { label: string }) {
   return (
-    <span className="inline-block w-fit rounded-md bg-secondary px-2 py-0.5 text-xs font-semibold tracking-wide text-secondary-foreground">
+    <span className="inline-block w-fit rounded-md bg-secondary px-2 py-0.5 text-[0.7rem] font-semibold tracking-wide text-secondary-foreground">
       {label}
     </span>
   );
@@ -16,8 +16,8 @@ function VenueTag({ label }: { label: string }) {
 
 function AwardBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex w-fit items-center gap-1 rounded-md border border-pearl-award-border bg-pearl-award-bg px-2 py-0.5 text-xs font-semibold tracking-wide text-pearl-accent">
-      <Award className="size-3.5 shrink-0" strokeWidth={2.25} aria-hidden />
+    <span className="inline-flex w-fit items-center gap-1 rounded-md border border-pearl-award-border bg-pearl-award-bg px-2 py-0.5 text-[0.7rem] font-semibold tracking-wide text-pearl-accent">
+      <Award className="size-3 shrink-0" strokeWidth={2.25} aria-hidden />
       <span>{label}</span>
     </span>
   );
@@ -29,12 +29,14 @@ function PublicationFullVenue({ pub }: { pub: PublicationEntry }) {
   if (!venueText) return null;
 
   return (
-    <p className="text-sm leading-relaxed text-muted-foreground">{venueText}</p>
+    <p className="text-[0.8125rem] leading-relaxed text-muted-foreground/80">
+      {venueText}
+    </p>
   );
 }
 
 const actionChipClassName =
-  "inline-block rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-primary transition-colors hover:border-secondary hover:bg-secondary/40 hover:text-secondary-foreground";
+  "inline-block rounded-full border border-border bg-card px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-primary transition-colors hover:border-secondary hover:bg-secondary/40 hover:text-secondary-foreground";
 
 function resolveBibtex(pub: PublicationEntry) {
   const stored = pub.citation?.trim();
@@ -51,26 +53,28 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
   const { awardLabel } = splitPublicationVenueAndAward(pub);
 
   return (
-    <article className="rounded-xl border border-border bg-card p-4 shadow-sm sm:p-5">
-      <div className="space-y-2">
+    <article className="rounded-xl border border-border bg-card px-3.5 py-3 shadow-sm sm:px-4 sm:py-3.5">
+      <div className="space-y-1.5">
         {pub.venue || awardLabel ? (
           <div className="flex flex-wrap items-center gap-1.5">
             {pub.venue ? <VenueTag label={pub.venue} /> : null}
             {awardLabel ? <AwardBadge label={awardLabel} /> : null}
           </div>
         ) : null}
-        <h3 className="text-base font-semibold leading-snug text-foreground">
+        <h3 className="font-display text-[1.05rem] font-semibold leading-snug text-primary sm:text-lg">
           {pub.title}
         </h3>
       </div>
 
-      <p className="mt-2 text-sm text-muted-foreground">{pub.authors}</p>
+      <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
+        {pub.authors}
+      </p>
 
-      <div className="mt-2">
+      <div className="mt-0.5">
         <PublicationFullVenue pub={pub} />
       </div>
 
-      <div className="publication-actions mt-4">
+      <div className="publication-actions mt-2.5">
         {hasAbstract ? (
           <input
             id={abstractId}
@@ -84,7 +88,7 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
           className="publication-toggle-citation sr-only"
         />
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
           <div className="flex flex-wrap items-center gap-1.5">
             {hasAbstract ? (
               <label
@@ -122,7 +126,7 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
           </div>
 
           {hasEqualContribution ? (
-            <p className="ml-auto shrink-0 text-[0.65rem] tracking-wide text-muted-foreground/65">
+            <p className="ml-auto shrink-0 text-[0.65rem] tracking-wide text-muted-foreground/60">
               * equal contribution
             </p>
           ) : null}
@@ -131,7 +135,7 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
         {hasAbstract ? (
           <div
             id={`${abstractId}-panel`}
-            className="publication-panel publication-panel-abstract mt-3 rounded-lg border border-border bg-muted/40 p-3 text-sm leading-relaxed text-foreground"
+            className="publication-panel publication-panel-abstract mt-2 rounded-lg border border-border bg-muted/40 p-2.5 text-sm leading-relaxed text-foreground"
           >
             <p>{pub.abstract}</p>
           </div>
@@ -139,7 +143,7 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
 
         <div
           id={`${citationId}-panel`}
-          className="publication-panel publication-panel-citation mt-3 rounded-lg border border-border bg-muted/40 p-3 text-sm leading-relaxed text-foreground"
+          className="publication-panel publication-panel-citation mt-2 rounded-lg border border-border bg-muted/40 p-2.5 text-sm leading-relaxed text-foreground"
         >
           <pre className="overflow-x-auto whitespace-pre-wrap font-mono text-xs leading-relaxed">
             {bibtex}
