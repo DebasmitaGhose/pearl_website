@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Fraunces } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const serif = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={fraunces.variable}>
+    <html lang="en" className={serif.variable}>
       <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );

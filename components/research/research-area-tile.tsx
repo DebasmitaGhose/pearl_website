@@ -48,14 +48,14 @@ export function ResearchAreaTile({ area }: { area: ResearchArea }) {
   const toggleId = `research-area-${area.slug || "area"}-pubs`;
 
   return (
-    <article className="research-area-tile flex h-full flex-col rounded-2xl border border-border bg-card">
-      <div className="relative aspect-[16/10] shrink-0 overflow-hidden rounded-t-2xl bg-muted">
+    <article className="research-area-tile grid grid-rows-[auto_auto_auto_1fr] overflow-hidden rounded-2xl border border-border bg-card shadow-sm max-sm:h-full sm:row-span-4 sm:grid-rows-subgrid">
+      <div className="relative h-52 w-full bg-white sm:h-60">
         {area.image ? (
           <Image
             src={area.image}
             alt=""
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(max-width: 768px) 100vw, 448px"
           />
         ) : (
@@ -65,18 +65,19 @@ export function ResearchAreaTile({ area }: { area: ResearchArea }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 px-5 py-5">
-        <div className="min-h-[7.5rem]">
-          <h2 className="font-display text-lg font-semibold leading-snug text-primary">
-            {area.title}
-          </h2>
-          <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-muted-foreground">
-            {area.description}
-          </p>
-        </div>
+      <div className="flex items-center bg-primary px-5 py-3">
+        <h2 className="font-display text-base font-semibold leading-snug text-balance text-primary-foreground sm:text-lg">
+          {area.title}
+        </h2>
+      </div>
 
-        {area.publications.length > 0 && (
-          <div className="research-area-pubs mt-auto border-t border-border pt-3">
+      <p className="px-5 pt-5 text-sm leading-relaxed text-muted-foreground">
+        {area.description}
+      </p>
+
+      {area.publications.length > 0 ? (
+        <div className="research-area-pubs px-5 pb-5 pt-3">
+          <div className="border-t border-border pt-3">
             {hasExtra ? (
               <input
                 id={toggleId}
@@ -122,8 +123,10 @@ export function ResearchAreaTile({ area }: { area: ResearchArea }) {
               <div className="mt-3 min-h-7" aria-hidden />
             )}
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="px-5 pb-5" />
+      )}
     </article>
   );
 }

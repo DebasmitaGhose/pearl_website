@@ -58,7 +58,11 @@ export async function getResearchContent() {
         title: area.title ?? "",
         slug: area.slug ?? "",
         description: area.description ?? "",
-        image: area.image ?? null,
+        image: area.image
+          ? area.image.startsWith("/") || area.image.startsWith("http")
+            ? area.image
+            : `/images/pages/research/${area.image}`
+          : null,
         publications: matched.map((pub) => ({
           slug: pub.slug,
           title: pub.title,

@@ -38,7 +38,7 @@ export function HomeCarousel({
     return (
       <div
         className={cn(
-          "flex h-[240px] flex-col items-center justify-center gap-2 border border-border bg-muted text-muted-foreground sm:h-[290px] lg:h-[320px]",
+          "flex min-h-[240px] flex-col items-center justify-center gap-2 border border-border bg-muted text-muted-foreground sm:min-h-[280px] lg:h-full lg:min-h-0",
           className
         )}
         aria-label="Image carousel placeholder"
@@ -57,17 +57,17 @@ export function HomeCarousel({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden border border-border bg-muted",
+        "group relative flex min-h-[240px] flex-col overflow-hidden border border-border bg-muted sm:min-h-[280px] lg:h-full lg:min-h-0",
         className
       )}
     >
-      <div className="relative h-[240px] w-full sm:h-[290px] lg:h-[320px]">
+      <div className="relative min-h-[200px] w-full flex-1">
         {slides.map((item, i) => (
           <div
             key={item.src}
             className={cn(
               "absolute inset-0 transition-opacity duration-700 ease-out",
-              i === index ? "opacity-100" : "opacity-0 pointer-events-none"
+              i === index ? "opacity-100" : "pointer-events-none opacity-0"
             )}
           >
             <Image
@@ -104,7 +104,7 @@ export function HomeCarousel({
       </div>
 
       {(slide.caption || count > 1) && (
-        <div className="flex items-center justify-between gap-4 border-t border-border/40 bg-background/80 px-4 py-2 sm:px-5">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-t border-border/40 bg-background/80 px-4 py-2 sm:px-5">
           <p className="text-sm text-muted-foreground">
             {slide.caption || ""}
           </p>

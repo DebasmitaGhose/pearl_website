@@ -5,30 +5,39 @@ theme: >-
   systems. We build algorithms and deployable platforms, then validate them with
   human participants in lab studies and in-the-wild deployments.
 areas:
-  - title: Goal inference and adaptation
+  - title: Robots inferring people's goals
     slug: goal-inference
     description: >-
-      How can a robot figure out what a person wants when goals are ambiguous,
-      unspoken, or change mid-task? We develop methods that combine observed
-      actions, language, and planning—so robots can assist without becoming a
-      nuisance.
+      For robots to help effectively, they need to understand what a person is
+      trying to achieve—even when that goal is never stated outright. We study
+      how robots can infer goals from what people do and from high-level
+      instructions, and how they can actively influence the interaction so that
+      people's behavior becomes more informative about their intent. We start
+      from the assumption that human goals are static and lie within a fixed,
+      known set, then progressively relax those assumptions toward more realistic
+      collaboration: goals that change mid-task, and goal sets that are open-ended
+      rather than known in advance. The aim is robots that keep a useful model of
+      human goals as that uncertainty grows.
+    image: /images/pages/research/ive-changed-my-mind-teaser.png
     publicationTitles:
       - "Robots Influencing Humans to Reveal their Goals during Collaboration and Competition"
       - "On-the-Job Robot Adaptation to Human Goals"
-      - "Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration"
       - "I've Changed My Mind: Robots Adapting to Changing Human Goals during Collaboration"
       - "Adapting Robot Actions to Human Intentions in Dynamic Shared Environments"
       - "Planning with Critical Decision Points: Robots that Influence Humans to Infer Their Strategy"
-  - title: Human-robot collaboration
+  - title: Robots adapting to people from high-level natural language instructions
     slug: collaboration
     description: >-
-      We design interaction mechanisms that let people shape robot behavior through
-      natural communication—verbal commands, demonstrations, and transparent policy
-      overlays—while robots maintain fluent task performance.
+      People often steer robots with high-level language—preferences for what to
+      make, what to avoid, or how to help—rather than spelling out every action.
+      We use this high-level language in two ways: to shape an existing
+      human–robot collaboration policy at inference time, and to combine it with
+      people’s actions to infer open-ended goals.
+    image: /images/pages/research/transparent-matrix-overlays-teaser.png
     publicationTitles:
+      - "Open-Ended Goal Inference through Actions and Language for Human-Robot Collaboration"
       - "Interactive Policy Shaping for Human-Robot Collaboration with Transparent Matrix Overlays"
-      - "Why We Should Build Robots that both Teach and Learn"
-  - title: Socially assistive robotics
+  - title: Robots learning from people
     slug: assistive
     description: >-
       We build and deploy systems that support wellbeing in everyday environments,
@@ -39,7 +48,7 @@ areas:
       - "A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot"
       - "Integrating Multimodal Affective Signals for Stress Detection from Audio-Visual Data"
       - "The Impact of an In-Home Co-Located Robotic Coach in Helping People Make Fewer Exercise Mistakes"
-  - title: Perception and learning
+  - title: In-the-wild robot deployments with people
     slug: perception
     description: >-
       We study how robots should represent the visual world when humans are the

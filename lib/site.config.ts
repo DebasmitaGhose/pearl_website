@@ -37,10 +37,9 @@ export const defaultSiteSettings = {
   labName: "PEARL",
   labSubtitle: "PEople Aligned Robots Lab",
   institution: "University of Illinois Chicago",
-  tagline:
-    "Designing robots that adapt to people in shared tasks—with minimal burden on the humans they work with.",
+  tagline: "Making robots ordinary in people's everyday lives.",
   researchSummary:
-    "The PEople Aligned Robots Lab (PEARL) studies how robots infer, anticipate, and adapt to human goals during collaboration.",
+    "PEARL studies how generalist robots can understand, model, and adapt to human behavior in natural environments—toward robots people are willing to live and work with.",
   contactEmail: "debasmita.ghose@uic.edu",
   address:
     "Department of Computer Science, University of Illinois Chicago, Chicago, IL",

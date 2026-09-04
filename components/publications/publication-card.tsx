@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 function VenueTag({ label }: { label: string }) {
   return (
-    <span className="inline-block w-fit rounded-md bg-secondary px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
+    <span className="inline-block w-fit rounded-md bg-secondary px-2 py-0.5 text-xs font-semibold tracking-wide text-secondary-foreground">
       {label}
     </span>
   );
@@ -46,6 +46,7 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
   const citationId = `${pub.slug}-citation`;
   const hasAbstract = Boolean(pub.abstract?.trim());
   const bibtex = resolveBibtex(pub);
+  const hasEqualContribution = pub.authors.includes("*");
 
   return (
     <article className="rounded-xl border border-border bg-card p-4 shadow-sm sm:p-5">
@@ -76,40 +77,48 @@ export function PublicationCard({ pub }: { pub: PublicationEntry }) {
           className="publication-toggle-citation sr-only"
         />
 
-        <div className="flex flex-wrap items-center gap-1.5">
-          {hasAbstract ? (
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          <div className="flex flex-wrap items-center gap-1.5">
+            {hasAbstract ? (
+              <label
+                htmlFor={abstractId}
+                className={cn(
+                  actionChipClassName,
+                  "publication-label-abstract cursor-pointer"
+                )}
+              >
+                Abstract
+              </label>
+            ) : null}
+
             <label
-              htmlFor={abstractId}
+              htmlFor={citationId}
               className={cn(
                 actionChipClassName,
-                "publication-label-abstract cursor-pointer"
+                "publication-label-citation cursor-pointer"
               )}
             >
-              Abstract
+              Citation
             </label>
+
+            {pub.links.map((link) => (
+              <a
+                key={`${link.label}-${link.url}`}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={actionChipClassName}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {hasEqualContribution ? (
+            <p className="ml-auto shrink-0 text-[0.65rem] tracking-wide text-muted-foreground/65">
+              * equal contribution
+            </p>
           ) : null}
-
-          <label
-            htmlFor={citationId}
-            className={cn(
-              actionChipClassName,
-              "publication-label-citation cursor-pointer"
-            )}
-          >
-            Citation
-          </label>
-
-          {pub.links.map((link) => (
-            <a
-              key={`${link.label}-${link.url}`}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={actionChipClassName}
-            >
-              {link.label}
-            </a>
-          ))}
         </div>
 
         {hasAbstract ? (

@@ -13,11 +13,23 @@ export default async function ResearchPage() {
     );
   }
 
+  const pairs: (typeof research.areas)[] = [];
+  for (let i = 0; i < research.areas.length; i += 2) {
+    pairs.push(research.areas.slice(i, i + 2));
+  }
+
   return (
     <PageFrame title="Research" description={research.theme || undefined} wide>
-      <div className="grid items-stretch gap-6 sm:grid-cols-2">
-        {research.areas.map((area) => (
-          <ResearchAreaTile key={area.slug || area.title} area={area} />
+      <div className="flex flex-col gap-6">
+        {pairs.map((pair) => (
+          <div
+            key={pair.map((area) => area.slug || area.title).join("-")}
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0"
+          >
+            {pair.map((area) => (
+              <ResearchAreaTile key={area.slug || area.title} area={area} />
+            ))}
+          </div>
         ))}
       </div>
     </PageFrame>
