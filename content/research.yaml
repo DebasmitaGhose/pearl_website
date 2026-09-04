@@ -42,10 +42,16 @@ areas:
   - title: Robots learning from people
     slug: assistive
     description: >-
-      We build and deploy systems that support wellbeing in everyday environments,
-      including mental health applications and robot-led activities for people living
-      with dementia and their care partners.
+      In human-robot collaboration, if a robot keeps asking for instructions or
+      demonstrations from the human, it quickly becomes a nuisance to the person.
+      We want robots that instead learn what they need to know while the human is
+      working, like a person's preferences and the human's task internal
+      representation. Across this line of work we study preference learning from
+      sparse human feedback, visual representations shaped and robots that learn
+      a skill well enough to teach it to someone else.
+    image: /images/pages/research/preference-learning-pizza-teaser-v2.jpg
     publicationTitles:
+      - "Rethinking the Implications of Human Feedback for Preference Learning in Human-Robot Collaboration"
       - "Tailoring Visual Object Representations to Human Requirements: A Case Study with a Recycling Robot"
       - "Why We Should Build Robots that both Teach and Learn"
   - title: In-the-wild robot deployments with people

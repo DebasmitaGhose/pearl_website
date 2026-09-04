@@ -35,7 +35,7 @@ export function joinHrefForMemberRole(role: string) {
 
 /** Replace with your Google Form URL when ready. */
 export const PHD_GOOGLE_FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf55dA5vkK6YKsetDm0Wrft5thEnh7VkAmCcitz3rcIKdAK6g/viewform?usp=dialog";
+  "https://docs.google.com/forms/d/e/1FAIpQLSebvU1ln4i35W7QBEce6m7GIixGBuQA4DYGQBjtG8tLPsYQqg/viewform?usp=publish-editor";
 
 /** Replace with the UIC undergrad/master's interest form URL when ready. */
 export const UIC_STUDENT_INTEREST_FORM_URL = "YOUR_UIC_STUDENT_INTEREST_FORM_URL_HERE";

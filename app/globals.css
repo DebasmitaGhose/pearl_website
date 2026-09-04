@@ -52,10 +52,10 @@
   --card-foreground: oklch(0.32 0.03 285);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.32 0.03 285);
-  /* Dusty plum — main color */
+  /* Dusty plum ? main color */
   --primary: oklch(0.48 0.1 285);
   --primary-foreground: oklch(0.99 0.005 85);
-  /* Soft lavender — same hue family as primary */
+  /* Soft lavender ? same hue family as primary */
   --secondary: oklch(0.9 0.04 285);
   --secondary-foreground: oklch(0.38 0.08 285);
   --muted: oklch(0.96 0.01 285);
@@ -67,7 +67,7 @@
   --input: oklch(0.9 0.02 285);
   --ring: oklch(0.48 0.1 285);
   --canvas: oklch(1 0 0);
-  /* Soft bronze — awards only; low chroma so it sits with dusty plum */
+  /* Soft bronze ? awards only; low chroma so it sits with dusty plum */
   --pearl-accent: oklch(0.52 0.07 60);
   --pearl-award-bg: oklch(0.96 0.02 70);
   --pearl-award-border: oklch(0.82 0.04 65);
@@ -174,7 +174,7 @@
     transform: rotate(45deg);
   }
 
-  /* Reserve room for ~3 citations so short lists don’t leave uneven cards */
+  /* Reserve room for ~3 citations so short lists don?t leave uneven cards */
   .research-area-preview {
     min-height: 10.5rem;
   }
@@ -202,7 +202,9 @@
   }
 }
 
-/* Home carousel — unlayered so it beats Tailwind utility layers */
+/* Home carousel ? unlayered so it beats Tailwind utility layers.
+   Radios + :has() drive slides; labels drive arrows/dots; JS clicks next every 10s. */
+
 .home-carousel-slide {
   opacity: 0;
   pointer-events: none;
@@ -211,6 +213,14 @@
 
 .home-carousel-nav {
   display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.home-carousel-nav label {
+  pointer-events: auto;
 }
 
 .home-carousel-caption {
@@ -227,9 +237,14 @@
 .home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-slide[data-slide="2"],
 .home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-slide[data-slide="3"],
 .home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-slide[data-slide="4"],
-.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-slide[data-slide="5"] {
-  opacity: 1;
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-slide[data-slide="5"],
+.home-carousel:has(.home-carousel-radio[data-slide="6"]:checked) .home-carousel-slide[data-slide="6"],
+.home-carousel:has(.home-carousel-radio[data-slide="7"]:checked) .home-carousel-slide[data-slide="7"],
+.home-carousel:has(.home-carousel-radio[data-slide="8"]:checked) .home-carousel-slide[data-slide="8"],
+.home-carousel:has(.home-carousel-radio[data-slide="9"]:checked) .home-carousel-slide[data-slide="9"] {
+  opacity: 1 !important;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .home-carousel:has(.home-carousel-radio[data-slide="0"]:checked) .home-carousel-nav[data-slide="0"],
@@ -237,7 +252,11 @@
 .home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-nav[data-slide="2"],
 .home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-nav[data-slide="3"],
 .home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-nav[data-slide="4"],
-.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-nav[data-slide="5"] {
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-nav[data-slide="5"],
+.home-carousel:has(.home-carousel-radio[data-slide="6"]:checked) .home-carousel-nav[data-slide="6"],
+.home-carousel:has(.home-carousel-radio[data-slide="7"]:checked) .home-carousel-nav[data-slide="7"],
+.home-carousel:has(.home-carousel-radio[data-slide="8"]:checked) .home-carousel-nav[data-slide="8"],
+.home-carousel:has(.home-carousel-radio[data-slide="9"]:checked) .home-carousel-nav[data-slide="9"] {
   display: block;
 }
 
@@ -246,7 +265,11 @@
 .home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-caption[data-slide="2"],
 .home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-caption[data-slide="3"],
 .home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-caption[data-slide="4"],
-.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-caption[data-slide="5"] {
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-caption[data-slide="5"],
+.home-carousel:has(.home-carousel-radio[data-slide="6"]:checked) .home-carousel-caption[data-slide="6"],
+.home-carousel:has(.home-carousel-radio[data-slide="7"]:checked) .home-carousel-caption[data-slide="7"],
+.home-carousel:has(.home-carousel-radio[data-slide="8"]:checked) .home-carousel-caption[data-slide="8"],
+.home-carousel:has(.home-carousel-radio[data-slide="9"]:checked) .home-carousel-caption[data-slide="9"] {
   display: block;
 }
 
@@ -255,7 +278,11 @@
 .home-carousel:has(.home-carousel-radio[data-slide="2"]:checked) .home-carousel-dot[data-slide="2"],
 .home-carousel:has(.home-carousel-radio[data-slide="3"]:checked) .home-carousel-dot[data-slide="3"],
 .home-carousel:has(.home-carousel-radio[data-slide="4"]:checked) .home-carousel-dot[data-slide="4"],
-.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-dot[data-slide="5"] {
+.home-carousel:has(.home-carousel-radio[data-slide="5"]:checked) .home-carousel-dot[data-slide="5"],
+.home-carousel:has(.home-carousel-radio[data-slide="6"]:checked) .home-carousel-dot[data-slide="6"],
+.home-carousel:has(.home-carousel-radio[data-slide="7"]:checked) .home-carousel-dot[data-slide="7"],
+.home-carousel:has(.home-carousel-radio[data-slide="8"]:checked) .home-carousel-dot[data-slide="8"],
+.home-carousel:has(.home-carousel-radio[data-slide="9"]:checked) .home-carousel-dot[data-slide="9"] {
   width: 1.5rem;
   background: var(--primary);
 }

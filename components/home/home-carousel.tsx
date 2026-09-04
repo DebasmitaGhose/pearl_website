@@ -10,6 +10,11 @@ export type CarouselSlide = {
   caption?: string;
 };
 
+const AUTOPLAY_MS = 10000;
+
+const arrowClassName =
+  "absolute top-1/2 z-20 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black/40 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-black/55";
+
 export function HomeCarousel({
   slides,
   className,
@@ -17,28 +22,53 @@ export function HomeCarousel({
   slides: CarouselSlide[];
   className?: string;
 }) {
-  const baseId = useId();
-  const rootRef = useRef<HTMLDivElement>(null);
   const count = slides.length;
+  const baseId = useId().replace(/:/g, "");
+  const rootRef = useRef<HTMLDivElement>(null);
 
+  // Advance by clicking the visible "next" label so :has() CSS updates reliably.
   useEffect(() => {
     if (count <= 1) return;
     const root = rootRef.current;
     if (!root) return;
 
-    const timer = window.setInterval(() => {
+    const advance = () => {
       const radios = [
-        ...root.querySelectorAll<HTMLInputElement>(
-          'input[type="radio"].home-carousel-radio'
-        ),
+        ...root.querySelectorAll<HTMLInputElement>(".home-carousel-radio"),
       ];
       if (radios.length === 0) return;
-      const current = radios.findIndex((radio) => radio.checked);
-      const next = (current + 1) % radios.length;
-      radios[next].checked = true;
-    }, 6000);
 
-    return () => window.clearInterval(timer);
+      const current = Math.max(
+        0,
+        radios.findIndex((radio) => radio.checked)
+      );
+      const nextLabel = root.querySelector<HTMLLabelElement>(
+        `.home-carousel-nav[data-slide="${current}"] .home-carousel-next`
+      );
+
+      if (nextLabel) {
+        nextLabel.click();
+        return;
+      }
+
+      const next = radios[(current + 1) % radios.length];
+      next.checked = true;
+      next.dispatchEvent(new Event("input", { bubbles: true }));
+      next.dispatchEvent(new Event("change", { bubbles: true }));
+    };
+
+    let timer = window.setInterval(advance, AUTOPLAY_MS);
+
+    const resetTimer = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(advance, AUTOPLAY_MS);
+    };
+
+    root.addEventListener("change", resetTimer);
+    return () => {
+      window.clearInterval(timer);
+      root.removeEventListener("change", resetTimer);
+    };
   }, [count]);
 
   if (count === 0) {
@@ -70,14 +100,12 @@ export function HomeCarousel({
       {slides.map((_, i) => (
         <input
           key={`radio-${i}`}
-          id={`${baseId}-${i}`}
-          type="radio"
-          name={baseId}
-          value={i}
-          defaultChecked={i === 0}
+          id={`${baseId}-slide-${i}`}
           className="home-carousel-radio sr-only"
+          type="radio"
+          name={`${baseId}-carousel`}
           data-slide={i}
-          aria-label={`Show slide ${i + 1}`}
+          defaultChecked={i === 0}
         />
       ))}
 
@@ -85,9 +113,8 @@ export function HomeCarousel({
         {slides.map((item, i) => (
           <div
             key={item.src}
-            className="home-carousel-slide absolute inset-0 bg-background transition-opacity duration-700 ease-out"
+            className="home-carousel-slide absolute inset-0 bg-background"
             data-slide={i}
-            aria-hidden
           >
             <Image
               src={item.src}
@@ -102,35 +129,31 @@ export function HomeCarousel({
         ))}
 
         {count > 1 &&
-          slides.map((_, i) => {
-            const prev = (i - 1 + count) % count;
-            const next = (i + 1) % count;
-            return (
-              <div
-                key={`nav-${i}`}
-                className="home-carousel-nav absolute inset-0 z-20"
-                data-slide={i}
+          slides.map((_, i) => (
+            <div
+              key={`nav-${i}`}
+              className="home-carousel-nav"
+              data-slide={i}
+            >
+              <label
+                htmlFor={`${baseId}-slide-${(i - 1 + count) % count}`}
+                className={cn(arrowClassName, "home-carousel-prev left-3")}
+                aria-label="Previous slide"
               >
-                <label
-                  htmlFor={`${baseId}-${prev}`}
-                  className="absolute left-3 top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black/40 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-black/55"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="size-5" />
-                </label>
-                <label
-                  htmlFor={`${baseId}-${next}`}
-                  className="absolute right-3 top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black/40 text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-black/55"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="size-5" />
-                </label>
-              </div>
-            );
-          })}
+                <ChevronLeft className="size-5" />
+              </label>
+              <label
+                htmlFor={`${baseId}-slide-${(i + 1) % count}`}
+                className={cn(arrowClassName, "home-carousel-next right-3")}
+                aria-label="Next slide"
+              >
+                <ChevronRight className="size-5" />
+              </label>
+            </div>
+          ))}
       </div>
 
-      <div className="flex shrink-0 items-center justify-between gap-4 border-t border-border/40 bg-background/80 px-4 py-2 sm:px-5">
+      <div className="relative flex shrink-0 items-center justify-between gap-4 border-t border-border/40 bg-background/80 px-4 py-2 sm:px-5">
         <div className="min-w-0 flex-1">
           {slides.map((item, i) => (
             <p
@@ -147,8 +170,8 @@ export function HomeCarousel({
             {slides.map((_, i) => (
               <label
                 key={`dot-${i}`}
-                htmlFor={`${baseId}-${i}`}
-                className="home-carousel-dot size-2 cursor-pointer rounded-full transition-all hover:bg-muted-foreground/50"
+                htmlFor={`${baseId}-slide-${i}`}
+                className="home-carousel-dot size-2 cursor-pointer rounded-full transition-all"
                 data-slide={i}
                 aria-label={`Go to slide ${i + 1}`}
               />

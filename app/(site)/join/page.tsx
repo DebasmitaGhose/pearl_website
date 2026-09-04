@@ -23,7 +23,9 @@ export default async function JoinPage() {
           >
             read my advising statement
           </Link>
-          .
+          . This statement is written mostly with prospective graduate students
+          in mind, but much of it also applies to prospective students at other
+          career stages.
         </p>
       }
     >

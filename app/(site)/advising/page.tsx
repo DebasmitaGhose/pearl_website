@@ -16,7 +16,6 @@ export default async function AdvisingPage() {
   return (
     <MarkdownPage
       title="Advising statement"
-      description="How I mentor students and what you can expect when joining PEARL."
       heroImage={advising.heroImage}
       content={() => advising.content()}
       footer={

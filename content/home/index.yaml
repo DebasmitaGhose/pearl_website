@@ -7,3 +7,11 @@ carouselImages:
     caption: Robots inferring goals through interaction
   - image: /images/home/carousel-slide-4-cooking-hires.jpg
     caption: Collaborating with people in shared environments
+  - image: /images/home/carousel-slide-5-coach-hires.jpg
+    caption: Coaching people through everyday activities at home
+  - image: /images/home/carousel-slide-6-ommie-seniors-hires.jpg
+    caption: Supporting wellbeing with socially assistive robots
+  - image: /images/home/carousel-slide-7-ommie-bedroom-hires.jpg
+    caption: Deploying robots for mental health in people's homes
+  - image: /images/home/carousel-slide-8-preference-pizza.jpg
+    caption: Learning preferences from people during collaboration
