@@ -1,29 +1,15 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   joinOpportunities,
   type JoinOpportunity,
 } from "@/lib/join-opportunities";
 import { JoinInline } from "@/components/join/join-inline";
 
-const defaultOpenId =
-  joinOpportunities.find((item) => item.defaultOpen)?.id ??
-  joinOpportunities[0]?.id ??
-  "";
-
-function hashOpenId() {
-  const id = window.location.hash.replace(/^#/, "");
-  return joinOpportunities.some((item) => item.id === id) ? id : defaultOpenId;
-}
-
-function subscribeHash(onStoreChange: () => void) {
-  window.addEventListener("hashchange", onStoreChange);
-  window.addEventListener("popstate", onStoreChange);
-  return () => {
-    window.removeEventListener("hashchange", onStoreChange);
-    window.removeEventListener("popstate", onStoreChange);
-  };
+function isJoinSectionId(id: string) {
+  return joinOpportunities.some((item) => item.id === id);
 }
 
 type JoinSection = JoinOpportunity["sections"][number];
@@ -120,11 +106,32 @@ function JoinSectionBlock({
 }
 
 export function JoinOpportunityCards() {
-  const openId = useSyncExternalStore(
-    subscribeHash,
-    hashOpenId,
-    () => defaultOpenId,
-  );
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const sectionParam = searchParams.get("section") ?? "";
+
+  // Hash fallback for older #phd-style links
+  const [hashSection, setHashSection] = useState("");
+  useEffect(() => {
+    const syncHash = () => {
+      setHashSection(window.location.hash.replace(/^#/, ""));
+    };
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, [pathname]);
+
+  const requested = sectionParam || hashSection;
+  const openId = isJoinSectionId(requested) ? requested : "";
+
+  useEffect(() => {
+    if (!openId) return;
+    document.getElementById(openId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [openId]);
 
   return (
     <div className="join-opportunity-list space-y-4">
@@ -141,10 +148,9 @@ export function JoinOpportunityCards() {
             className="join-opportunity-toggle sr-only"
             checked={openId === opportunity.id}
             onChange={() => {
-              if (window.location.hash.replace(/^#/, "") === opportunity.id) {
-                return;
-              }
-              window.location.hash = opportunity.id;
+              router.replace(`${pathname}?section=${opportunity.id}`, {
+                scroll: false,
+              });
             }}
           />
           <label

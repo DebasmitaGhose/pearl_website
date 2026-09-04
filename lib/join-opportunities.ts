@@ -30,7 +30,7 @@ export const memberRoleToJoinSection: Record<string, string> = {
 
 export function joinHrefForMemberRole(role: string) {
   const sectionId = memberRoleToJoinSection[role];
-  return sectionId ? `/join#${sectionId}` : "/join";
+  return sectionId ? `/join?section=${sectionId}` : "/join";
 }
 
 /** Replace with your Google Form URL when ready. */
@@ -83,7 +83,6 @@ export const joinOpportunities: JoinOpportunity[] = [
   {
     id: "phd",
     title: "Prospective Ph.D. Students",
-    defaultOpen: true,
     sections: [
       {
         callout:

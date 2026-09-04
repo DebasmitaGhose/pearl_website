@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { JoinOpportunityCards } from "@/components/join/join-opportunity-cards";
 import { JoinResearchOverview } from "@/components/join/join-research-overview";
 import { PageFrame } from "@/components/layout/page-frame";
@@ -42,7 +43,9 @@ export default async function JoinPage() {
 
       <JoinResearchOverview />
 
-      <JoinOpportunityCards />
+      <Suspense fallback={null}>
+        <JoinOpportunityCards />
+      </Suspense>
 
       <div className="mt-10 border-t border-border pt-6">
         <p className="text-base text-muted-foreground">

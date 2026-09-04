@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 
-const sans = Geist({
+const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={sans.variable}>
+    <html lang="en" className={fraunces.variable}>
       <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
