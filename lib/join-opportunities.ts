@@ -218,7 +218,7 @@ export const joinOpportunities: JoinOpportunity[] = [
   },
   {
     id: "uic-students",
-    title: "Prospective Undergraduate and Master's Students",
+    title: "Prospective Undergraduate and Master's Students at UIC",
     sections: [
       {
         callout:

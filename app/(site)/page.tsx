@@ -1,36 +1,25 @@
-import Link from "next/link";
 import { HomeCarousel } from "@/components/home/home-carousel";
 import { NewsTimeline } from "@/components/news/news-timeline";
 import { ButtonLink } from "@/components/ui/button-link";
-import {
-  getAboutContent,
-  getHomeCarousel,
-  getSiteSettings,
-} from "@/lib/content";
-import { renderMarkdoc } from "@/lib/markdoc";
+import { getHomeCarousel, getSiteSettings } from "@/lib/content";
 
 export default async function HomePage() {
   const site = await getSiteSettings();
-  const about = await getAboutContent();
   const carouselSlides = await getHomeCarousel();
-  const aboutContent = about
-    ? await renderMarkdoc(() => about.content())
-    : null;
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      <section className="mt-5 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-5 py-4 sm:px-7 sm:py-5">
-        <p className="font-display text-base font-semibold leading-snug text-primary sm:text-lg">
-          We are hiring Ph.D., master&apos;s, and undergraduate students to join
-          the lab.{" "}
-          <Link
-            href="/join"
-            className="underline decoration-primary/35 underline-offset-4 transition-colors hover:decoration-primary"
-          >
-            Learn more and apply
-          </Link>
-          .
+      <section className="mt-5 flex items-center justify-between gap-3 rounded-2xl border border-primary/15 bg-gradient-to-br from-secondary via-secondary/80 to-accent px-4 py-3.5 sm:gap-6 sm:px-7 sm:py-5">
+        <p className="min-w-0 text-sm font-semibold leading-snug text-primary sm:text-lg">
+          We are hiring Ph.D., master&apos;s, and undergraduate students.
         </p>
+        <ButtonLink
+          href="/join"
+          size="lg"
+          className="shrink-0 px-3 text-xs sm:px-4 sm:text-sm"
+        >
+          Join the lab
+        </ButtonLink>
       </section>
 
       <section className="py-5 sm:py-6">
@@ -42,19 +31,6 @@ export default async function HomePage() {
             <p className="text-muted-foreground">{site.tagline}</p>
           </div>
           <HomeCarousel slides={carouselSlides} className="order-1 lg:order-2" />
-        </div>
-      </section>
-
-      <section className="border-t border-primary/10 py-6">
-        <h2 className="font-display text-xl font-semibold text-primary">About the lab</h2>
-        <div className="mt-3 max-w-4xl">
-          {aboutContent ? (
-            <div className="prose prose-neutral max-w-none">
-              {aboutContent}
-            </div>
-          ) : (
-            <p className="text-muted-foreground">{site.researchSummary}</p>
-          )}
         </div>
       </section>
 
