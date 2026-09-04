@@ -1,9 +1,9 @@
 carouselImages:
-  - image: /images/home/carousel-slide-1-music-clean.jpg
+  - image: /images/home/carousel-slide-1-music-hires.jpg
     caption: Robots that teach and learn alongside people
-  - image: /images/home/carousel-slide-2-recycling-clean.jpg
+  - image: /images/home/carousel-slide-2-recycling-hires.jpg
     caption: Learning from people in shared physical tasks
-  - image: /images/home/carousel-slide-3-mobile-clean.jpg
+  - image: /images/home/carousel-slide-3-mobile-hires.jpg
     caption: Robots inferring goals through interaction
-  - image: /images/home/carousel-slide-4-cooking-clean.jpg
+  - image: /images/home/carousel-slide-4-cooking-hires.jpg
     caption: Collaborating with people in shared environments
