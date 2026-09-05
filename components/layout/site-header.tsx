@@ -9,7 +9,7 @@ type SiteHeaderProps = {
   labSubtitle: string;
 };
 
-function UicLogo() {
+function UicLogo({ className }: { className?: string }) {
   return (
     <Link
       href="https://www.uic.edu/"
@@ -24,7 +24,7 @@ function UicLogo() {
         width={280}
         height={78}
         unoptimized
-        className="h-14 w-auto object-contain"
+        className={className ?? "h-14 w-auto object-contain"}
         priority
       />
     </Link>
@@ -36,14 +36,16 @@ export function SiteHeader({ labSubtitle }: SiteHeaderProps) {
     <header className="sticky top-0 z-40 border-b border-primary/40 bg-primary text-primary-foreground shadow-[0_14px_32px_-14px_oklch(0.25_0.08_285/0.65)]">
       <div className="h-1 bg-gradient-to-r from-secondary via-pearl-accent/80 to-secondary" />
       <div className="bg-gradient-to-br from-pearl-blue via-primary to-primary">
-        {/* Mobile: full logos stacked so nothing is cropped or shrunk */}
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 md:hidden">
-          <div className="flex items-start justify-between gap-3">
+        {/* Mobile: one row — full PEARL + UIC logos (same artwork) + menu */}
+        <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-1 px-2.5 md:hidden">
+          <div className="min-w-0 origin-left scale-[0.7] [margin-right:-18%]">
             <LabLogo subtitle={labSubtitle} variant="onDark" size="lg" />
-            <MobileNav />
           </div>
-          <div className="flex justify-end">
-            <UicLogo />
+          <div className="flex shrink-0 items-center gap-1">
+            <div className="origin-right scale-[0.7] [margin-left:-12%]">
+              <UicLogo />
+            </div>
+            <MobileNav />
           </div>
         </div>
 
