@@ -3,6 +3,7 @@ import {
   buildPublicationLinks,
   publicationSlug,
 } from "@/lib/publications";
+import { withBasePath } from "@/lib/paths";
 import { renderMarkdoc } from "@/lib/markdoc";
 import { defaultSiteSettings } from "@/lib/site.config";
 
@@ -29,18 +30,32 @@ export async function getHomeCarousel() {
   const home = await reader.singletons.home.read();
   const slides =
     home?.carouselImages?.map((slide) => ({
-      src: slide.image ?? "",
+      src: withBasePath(slide.image ?? ""),
       caption: slide.caption ?? "",
     })) ?? [];
   return slides.filter((slide) => slide.src);
 }
 
 export async function getAboutContent() {
-  return reader.singletons.about.read();
+  const about = await reader.singletons.about.read();
+  if (!about) return null;
+  return {
+    ...about,
+    heroImage: about.heroImage
+      ? withBasePath(about.heroImage)
+      : about.heroImage,
+  };
 }
 
 export async function getAdvisingContent() {
-  return reader.singletons.advising.read();
+  const advising = await reader.singletons.advising.read();
+  if (!advising) return null;
+  return {
+    ...advising,
+    heroImage: advising.heroImage
+      ? withBasePath(advising.heroImage)
+      : advising.heroImage,
+  };
 }
 
 export async function getResearchContent() {
@@ -61,9 +76,11 @@ export async function getResearchContent() {
         slug: area.slug ?? "",
         description: area.description ?? "",
         image: area.image
-          ? area.image.startsWith("/") || area.image.startsWith("http")
-            ? area.image
-            : `/images/pages/research/${area.image}`
+          ? withBasePath(
+              area.image.startsWith("/") || area.image.startsWith("http")
+                ? area.image
+                : `/images/pages/research/${area.image}`
+            )
           : null,
         publications: matched.map((pub) => ({
           slug: pub.slug,
@@ -90,7 +107,12 @@ export async function getResearchContent() {
 }
 
 export async function getJoinContent() {
-  return reader.singletons.join.read();
+  const join = await reader.singletons.join.read();
+  if (!join) return null;
+  return {
+    ...join,
+    heroImage: join.heroImage ? withBasePath(join.heroImage) : join.heroImage,
+  };
 }
 
 export async function getActiveMembers() {
@@ -108,7 +130,13 @@ export async function getActiveMembers() {
       linkedinUrl: member.entry.linkedinUrl ?? undefined,
       twitterUrl: member.entry.twitterUrl ?? undefined,
       githubUrl: member.entry.githubUrl ?? undefined,
-      photo: member.entry.photo ?? undefined,
+      photo: member.entry.photo
+        ? withBasePath(
+            member.entry.photo.startsWith("/")
+              ? member.entry.photo
+              : `/images/members/${member.entry.photo}`
+          )
+        : undefined,
       order: member.entry.order ?? 0,
       active: member.entry.active,
     }));
@@ -157,7 +185,9 @@ export async function getNewsEntries(limit?: number) {
         title: item.entry.title,
         date: item.entry.date,
         summary: item.entry.summary,
-        image: item.entry.image ?? undefined,
+        image: item.entry.image
+          ? withBasePath(item.entry.image)
+          : undefined,
         body,
       };
     })
@@ -178,6 +208,8 @@ export async function getNewsItems() {
       title: item.entry.title,
       date: item.entry.date,
       summary: item.entry.summary,
-      image: item.entry.image ?? undefined,
+      image: item.entry.image
+        ? withBasePath(item.entry.image)
+        : undefined,
     }));
 }

@@ -25,7 +25,8 @@ const socialIconClass =
 
 function resolvePhoto(photo?: string | null) {
   if (!photo) return null;
-  if (photo.startsWith("/")) return photo;
+  // Paths from content are already base-path-aware.
+  if (photo.startsWith("http") || photo.startsWith("/")) return photo;
   return `/images/members/${photo}`;
 }
 

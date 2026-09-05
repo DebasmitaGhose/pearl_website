@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/paths";
 
 type LabLogoProps = {
   subtitle?: string;
@@ -29,7 +30,7 @@ export function LabLogo({
       >
         {/* unoptimized avoids Next.js image cache flattening the transparent PNG */}
         <Image
-          src="/pearl-logo-white.png"
+          src={withBasePath("/pearl-logo-white.png")}
           alt="PEARL logo: cupped human and robot hands with a pearl floating between them"
           width={large ? 64 : 48}
           height={large ? 64 : 48}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LabLogo } from "@/components/layout/lab-logo";
 import { SiteNavBar } from "@/components/layout/site-nav-bar";
+import { withBasePath } from "@/lib/paths";
 
 type SiteHeaderProps = {
   labSubtitle: string;
@@ -23,7 +24,7 @@ export function SiteHeader({ labSubtitle }: SiteHeaderProps) {
               aria-label="University of Illinois Chicago"
             >
               <Image
-                src="/uic-logo-white.png"
+                src={withBasePath("/uic-logo-white.png")}
                 alt="University of Illinois Chicago"
                 width={280}
                 height={78}
