@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   },
   description:
     "PEople Aligned Robots Lab — human-robot interaction research at UIC.",
+  icons: {
+    icon: [{ url: "/pearl-logo.png", type: "image/png" }],
+    apple: [{ url: "/pearl-logo.png", type: "image/png" }],
+    shortcut: "/pearl-logo.png",
+  },
 };
 
 export default function RootLayout({
