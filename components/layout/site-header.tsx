@@ -36,17 +36,15 @@ export function SiteHeader({ labSubtitle }: SiteHeaderProps) {
     <header className="sticky top-0 z-40 border-b border-primary/40 bg-primary text-primary-foreground shadow-[0_14px_32px_-14px_oklch(0.25_0.08_285/0.65)]">
       <div className="h-1 bg-gradient-to-r from-secondary via-pearl-accent/80 to-secondary" />
       <div className="bg-gradient-to-br from-pearl-blue via-primary to-primary">
-        {/* Mobile: one row — full PEARL + UIC logos (same artwork) + menu */}
-        <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-1 px-2.5 md:hidden">
-          <div className="min-w-0 origin-left scale-[0.7] [margin-right:-18%]">
+        {/* Mobile: one row — PEARL, UIC, and menu with even spacing */}
+        <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-4 px-3 md:hidden">
+          <div className="min-w-0 origin-left scale-[0.7] [margin-right:-16%]">
             <LabLogo subtitle={labSubtitle} variant="onDark" size="lg" />
           </div>
-          <div className="flex shrink-0 items-center gap-1">
-            <div className="origin-right scale-[0.7] [margin-left:-12%]">
-              <UicLogo />
-            </div>
-            <MobileNav />
+          <div className="shrink-0 origin-center scale-[0.7]">
+            <UicLogo />
           </div>
+          <MobileNav className="shrink-0" />
         </div>
 
         {/* Desktop: original side-by-side layout */}
