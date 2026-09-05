@@ -19,12 +19,12 @@ export function LabLogo({
   return (
     <Link
       href="/"
-      className={`group inline-flex min-w-0 max-w-full ${className ?? ""}`}
+      className={`group inline-flex min-w-0 ${className ?? ""}`}
     >
       <div
-        className={`flex min-w-0 items-center border-2 border-primary-foreground/90 bg-transparent ${
+        className={`flex items-center border-2 border-primary-foreground/90 bg-transparent ${
           large
-            ? "gap-2 rounded-lg px-2 py-1 sm:gap-3 sm:px-3 sm:py-2"
+            ? "gap-3 rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2"
             : "gap-2.5 rounded-md px-2 py-1"
         }`}
       >
@@ -35,16 +35,14 @@ export function LabLogo({
           width={large ? 64 : 48}
           height={large ? 64 : 48}
           unoptimized
-          className={`${
-            large ? "size-10 sm:size-16" : "size-12"
-          } shrink-0 bg-transparent object-contain transition-transform group-hover:scale-[1.02]`}
+          className={`${large ? "size-16" : "size-12"} shrink-0 bg-transparent object-contain transition-transform group-hover:scale-[1.02]`}
           priority
         />
-        <div className="min-w-0 text-left leading-tight sm:text-center">
+        <div className="min-w-0 whitespace-nowrap text-center leading-tight">
           <p
             className={
               large
-                ? "font-display text-xl font-semibold leading-none tracking-normal text-primary-foreground group-hover:text-secondary sm:text-[1.88rem]"
+                ? "font-display text-[1.72rem] font-semibold leading-none tracking-normal text-primary-foreground group-hover:text-secondary sm:text-[1.88rem]"
                 : "font-display text-[1.2rem] font-semibold leading-none tracking-normal text-primary-foreground group-hover:text-secondary"
             }
             suppressHydrationWarning
@@ -52,7 +50,7 @@ export function LabLogo({
             PEARL
           </p>
           {subtitle ? (
-            <div className="mt-1 hidden sm:block">
+            <>
               <div
                 className="mx-auto my-1.5 h-px w-10 bg-primary-foreground/90"
                 aria-hidden
@@ -60,8 +58,8 @@ export function LabLogo({
               <p
                 className={
                   large
-                    ? "font-display text-[0.8rem] font-medium leading-tight tracking-normal whitespace-nowrap text-primary-foreground/90 sm:text-[0.85rem]"
-                    : "font-display text-xs font-medium leading-tight tracking-normal whitespace-nowrap text-primary-foreground/90"
+                    ? "font-display text-[0.8rem] font-medium leading-tight tracking-normal text-primary-foreground/90 sm:text-[0.85rem]"
+                    : "font-display text-xs font-medium leading-tight tracking-normal text-primary-foreground/90"
                 }
               >
                 PEople Aligned
@@ -69,13 +67,13 @@ export function LabLogo({
               <p
                 className={
                   large
-                    ? "font-display text-[0.8rem] font-medium leading-tight tracking-normal whitespace-nowrap text-primary-foreground/90 sm:text-[0.85rem]"
-                    : "font-display text-xs font-medium leading-tight tracking-normal whitespace-nowrap text-primary-foreground/90"
+                    ? "font-display text-[0.8rem] font-medium leading-tight tracking-normal text-primary-foreground/90 sm:text-[0.85rem]"
+                    : "font-display text-xs font-medium leading-tight tracking-normal text-primary-foreground/90"
                 }
               >
                 Robots Lab
               </p>
-            </div>
+            </>
           ) : null}
         </div>
       </div>
