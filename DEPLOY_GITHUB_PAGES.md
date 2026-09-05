@@ -15,14 +15,19 @@ This site is built as a **static export** and deployed to GitHub Pages. There is
 1. Push the repo to GitHub.
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. (Optional) If the site URL is `https://YOUR_USERNAME.github.io/REPO_NAME/` (not a custom domain), add a repository variable:
+4. **Custom domain (this lab):** leave `NEXT_PUBLIC_BASE_PATH` **unset / empty**.
+   The live site at `https://www.people-aligned-robots.com/` is served from the
+   domain root, so asset URLs must be `/images/...`, not `/pearl_website/images/...`.
+
+   Only set a base path if you are using the project URL
+   `https://YOUR_USERNAME.github.io/REPO_NAME/` **without** a custom domain:
    - **Settings → Secrets and variables → Actions → Variables**
    - Name: `NEXT_PUBLIC_BASE_PATH`
-   - Value: `/REPO_NAME` (e.g. `/pearl-website`)
+   - Value: `/REPO_NAME` (e.g. `/pearl_website`)
 
    Leave this **empty** if you use:
    - a repo named `YOUR_USERNAME.github.io` (site at root), or
-   - a **custom domain** (e.g. `pearl.cs.uic.edu`).
+   - a **custom domain** (e.g. `people-aligned-robots.com`).
 
 5. Push to `main` (or run the **Deploy static site to GitHub Pages** workflow manually).
 
