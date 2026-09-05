@@ -51,7 +51,7 @@ export const UIC_CS_PHD_APPLY_URL =
 
 /** Shared intro for all hiring tracks on the Join page */
 export const joinResearchOverview = {
-  title: "What Does Research in PEARL Look Like?",
+  title: "What does Research in PEARL look like?",
   paragraphs: [
     "PEARL is a full-stack robotics lab focused on developing technologies—algorithms, interfaces, and robotic systems—that enable robots to work effectively with and around people. Our projects span human-robot interaction, robotics, and AI, and often involve taking ideas from algorithm and system development to deployment on physical robots and evaluation with people.",
   ] as string[],
