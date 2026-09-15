@@ -12,9 +12,11 @@ publications:
         title = {Rethinking the Implications of Human Feedback for Preference Learning in Human-Robot Collaboration},
         booktitle = {Conference on Robot Learning (CoRL 2026), Austin, Texas},
         year = {2026},
-        note = {Paper link coming soon},
+        url = {https://arxiv.org/abs/2609.13982},
       }
-    links: []
+    links:
+      - label: paper
+        url: https://arxiv.org/pdf/2609.13982
   - title: "Robots Influencing Humans to Reveal their Goals during Collaboration and Competition"
     authors: "Debasmita Ghose*, Oz Gitelson*, Michal Lewkowicz, Jake Brawer, Alessandro Roncone, Marynel Vazquez, Brian Scassellati"
     venue: "AURO"
