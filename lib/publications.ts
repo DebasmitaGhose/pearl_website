@@ -98,8 +98,26 @@ function formatAuthorsForBibtex(authors: string) {
     .join(" and ");
 }
 
-function bibtexCiteKey(slug: string) {
-  return slug.replace(/-/g, "");
+/** Google Scholar–style key: lastname + year + first word of title. */
+export function googleScholarCiteKey(authors: string, year: number, title: string) {
+  const firstAuthor = authors
+    .split(",")[0]
+    ?.trim()
+    .replace(/\*+/g, "")
+    .trim();
+  const nameParts = firstAuthor?.split(/\s+/).filter(Boolean) ?? [];
+  const lastName =
+    nameParts[nameParts.length - 1]?.replace(/[^a-zA-Z]/g, "").toLowerCase() ||
+    "author";
+
+  const firstWord =
+    title
+      .trim()
+      .split(/\s+/)[0]
+      ?.replace(/[^a-zA-Z0-9]/g, "")
+      .toLowerCase() || "paper";
+
+  return `${lastName}${year}${firstWord}`;
 }
 
 function stripAwardFromVenue(venue: string) {
@@ -133,7 +151,7 @@ export function formatPublicationBibtex(entry: {
   year: number;
 }) {
   const authors = formatAuthorsForBibtex(entry.authors);
-  const key = bibtexCiteKey(entry.slug ?? publicationSlug(entry.title, 0));
+  const key = googleScholarCiteKey(entry.authors, entry.year, entry.title);
   const { venueText } = splitPublicationVenueAndAward(entry);
   const venue = stripAwardFromVenue(venueText);
   const type = getBibtexEntryType(venue);
