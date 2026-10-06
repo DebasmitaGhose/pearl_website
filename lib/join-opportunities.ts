@@ -1,7 +1,4 @@
-import {
-  LAB_CONTACT_EMAIL,
-  LAB_CONTACT_EMAIL_NOTE,
-} from "@/lib/site.config";
+import { LAB_CONTACT_EMAIL } from "@/lib/site.config";
 
 export type JoinInlinePart =
   | string
@@ -279,7 +276,7 @@ export const joinOpportunities: JoinOpportunity[] = [
               href: `mailto:${LAB_CONTACT_EMAIL}`,
               label: LAB_CONTACT_EMAIL,
             },
-            `*. Please use the subject line `,
+            `. Please use the subject line `,
             {
               type: "bold",
               text: "[POTENTIAL POSTDOC]",
@@ -296,7 +293,6 @@ export const joinOpportunities: JoinOpportunity[] = [
             },
             " describing your research interests, why PEARL would be a good fit, and what you hope to accomplish during a postdoc.",
           ],
-          [`*${LAB_CONTACT_EMAIL_NOTE}`],
           [
             "At present, we do not have dedicated funding for postdoctoral positions, so candidates with external fellowship or other postdoctoral funding are especially encouraged to get in touch. Funding availability may change in the future, so please check this page for updates and potential openings.",
           ],
@@ -322,7 +318,7 @@ export const joinOpportunities: JoinOpportunity[] = [
               href: `mailto:${LAB_CONTACT_EMAIL}`,
               label: LAB_CONTACT_EMAIL,
             },
-            `*. Please use the subject line `,
+            `. Please use the subject line `,
             {
               type: "bold",
               text: "[POTENTIAL VISITOR]",
@@ -344,7 +340,6 @@ export const joinOpportunities: JoinOpportunity[] = [
             },
             ".",
           ],
-          [`*${LAB_CONTACT_EMAIL_NOTE}`],
           [
             "At this time, PEARL is not able to provide funding for visiting graduate students, so visitors would need to have their own source of financial support.",
           ],
