@@ -263,6 +263,8 @@ export default config({
           publicPath: "/images/members",
         }),
         email: fields.text({ label: "Email" }),
+        office: fields.text({ label: "Office (e.g. 3436 CDRLC)" }),
+        officeAddress: fields.text({ label: "Office street address" }),
         website: fields.url({ label: "Website" }),
         scholarUrl: fields.url({ label: "Google Scholar URL" }),
         linkedinUrl: fields.url({ label: "LinkedIn URL" }),

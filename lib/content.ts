@@ -125,6 +125,8 @@ export async function getActiveMembers() {
       name: member.entry.name,
       role: member.entry.role,
       email: member.entry.email ?? undefined,
+      office: member.entry.office || undefined,
+      officeAddress: member.entry.officeAddress || undefined,
       website: member.entry.website ?? undefined,
       scholarUrl: member.entry.scholarUrl ?? undefined,
       linkedinUrl: member.entry.linkedinUrl ?? undefined,

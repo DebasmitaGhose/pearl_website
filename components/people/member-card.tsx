@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, GraduationCap, Mail } from "lucide-react";
+import { Globe, GraduationCap, Mail, MapPin } from "lucide-react";
 import { ContactEmail } from "@/components/ui/contact-email";
 import { joinHrefForMemberRole } from "@/lib/join-opportunities";
 import { roleLabels, memberRoleOrder } from "@/lib/site.config";
@@ -10,6 +10,8 @@ export type MemberEntry = {
   name: string;
   role: string;
   email?: string;
+  office?: string;
+  officeAddress?: string;
   website?: string;
   scholarUrl?: string;
   linkedinUrl?: string;
@@ -113,11 +115,46 @@ function PICard({ member }: { member: MemberEntry }) {
         <p className="mt-1 text-sm text-muted-foreground sm:text-base">
           PI and Lab Director, PEople Aligned Robots Lab (PEARL)
         </p>
-        {member.email && (
-          <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-            <ContactEmail email={member.email} />
-          </p>
-        )}
+        {member.email || member.office ? (
+          <div className="mt-4 flex flex-col items-center gap-2.5 border-t border-primary/10 pt-4 text-sm sm:items-start sm:text-base">
+            {member.email && (
+              <div className="flex items-center gap-2.5">
+                <Mail
+                  className="size-4 shrink-0 text-primary/70"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
+                <ContactEmail email={member.email} />
+              </div>
+            )}
+            {member.office && (
+              <div className="flex items-start gap-2.5 text-left">
+                <MapPin
+                  className="mt-1 size-4 shrink-0 text-primary/70"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
+                <div className="leading-snug">
+                  <p className="font-medium text-foreground">
+                    Office {member.office}
+                  </p>
+                  {member.officeAddress && (
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        member.officeAddress
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {member.officeAddress}
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        ) : null}
 
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 sm:justify-start">
           {member.email && (
